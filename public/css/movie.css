@@ -1,0 +1,478 @@
+*{
+ margin: 0;
+ padding: 0;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&family=Lemonada:wght@300&display=swap');
+
+#Telfazy{
+ Background-image: url('/images/wallpaper.jpg');
+ Background-size: cover;
+ width: 100%;
+ height: auto;
+  padding: 10px;
+}
+
+
+#Sociel{
+    background-color: rgba(0, 0, 0, 0.7);
+ margin-left: auto;
+  margin-right: auto;
+ width: 1320px;
+ height: 14vh;
+ display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 10px;
+}
+.facebook {
+  padding-left: 20px;
+  padding-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display:block;
+  float: left;
+
+}
+.Instagram {
+  margin-top: auto;
+  margin-bottom: auto;
+  display:block;
+  float: left;
+}
+.Google {
+  margin-top: auto;
+  margin-bottom: auto;
+  display:block;
+  float: right;
+}
+.Youtube {
+  padding-left: 5px;
+  padding-right: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display:block;
+  float: right;
+
+}
+
+#Search{
+    background-color: rgba(0, 0, 0, 0.7);
+  width: 1320px;
+  height: 8vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.Logosearch {
+  margin-top: 8px;
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 20px;
+  display:block;
+  float: right;
+
+}
+
+#Button{
+  margin-top: 9px;
+  margin-left: 10px;
+  background-color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  Color: white;
+  font-size: 12.5px;
+  float: left;
+  font-family: 'Lemonada', cursive;
+}
+#Title{
+  font-family: 'Lemonada', cursive;
+  margin-top: 14px;
+  padding-right: 30px;
+  float: right;
+  Color: #566573;
+  font-size: 12.5px;
+}
+
+#Category{
+    background-color: rgba(0, 0, 0, 0.7);
+
+  width: 1320px;
+  height: 7vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+ }
+ #Category ul{
+  margin: 0px;
+  padding: 0px;
+  padding-top: 7px;
+  list-style: none;
+ }
+ #Category ul li{
+  margin-right: 80px;
+  float: left;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 30px;
+  font-family: 'Lemonada', cursive;
+ }
+ #Category ul li a{
+  text-decoration: none;
+  color: white;
+  display: block;
+ }
+ #Category ul li ul li{
+    background-color: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  padding-bottom: 5px;
+  display: none;
+ }
+#Category ul li a:hover {
+  background-color: black;
+ }
+#Category ul li:hover ul li {
+  display: block;
+}
+
+#Info{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+
+  width: 184rem;
+  height: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+ }
+.Poster{
+  padding: 2.5px;
+  float: left;
+  padding-right: 10px;
+  position: relative;
+    left: 3rem;
+    top: 1rem;
+ }
+ .Ligne{
+  padding: 2.5px;
+  padding-left: 10px;
+  width: 5px;
+  height: 28vh;
+  float: right;
+ }
+ .Color{
+   color: #ffc107;
+ }
+ #English{
+    float: left;
+    text-align: left;
+    width: 217px;
+    text-align: left;
+    margin: 0;
+    font-family: 'Lemonada', cursive;
+    position: relative;
+    left: 6rem;
+    top: 1rem;
+ }
+ #Arabe{
+    float: right;
+    text-align: right;
+    width: 302px;
+    margin: 9px;
+    padding-top: 51px;
+    font-family: 'Lemonada', cursive;
+ }
+
+ #Name{
+  font-size: 27px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Genre{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Creator{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1x;
+ }
+ #Year{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Imdb{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Time{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Quality{
+  font-size: 22px;
+  Color: white;
+  padding-bottom: 1px;
+ }
+ #Langue{
+    font-size: 23px;
+  Color: white;
+  padding-bottom: 5px;
+ }
+#Country{
+    font-size: 21px;
+  Color: white;
+  padding-bottom: 5px;
+ }
+ #Plot{
+    float: right;
+    font-size: 21px;
+    Color: white;
+    width: 477px;
+    padding-bottom: 7px;
+ }
+ #Etoile{
+  float: right;
+  font-size: 25px;
+  color: #ffc107;
+
+ }
+ #Etoile .Rate{
+  padding-left: 5px;
+  font-size: 20px;
+  color: #ffc107;
+ }
+ #Adblock{
+   background-color: rgba(0, 0, 0, 0.7);
+  width: 1320px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lemonada', cursive;
+  font-size: 15px;
+ }
+ .Ad{
+  font-size: 18px;
+ }
+ #Watch{
+  font-family: 'Lemonada', cursive;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  width: 1320px;
+  display: flex;
+ }
+ #Actor{
+   background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Lemonada', cursive;
+  width: 330px;
+  height: 46.7vh;
+  padding: 10px;
+  color: white;
+ }
+
+ #Actor1{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  Display: flex;
+  padding-top: 15px;
+  padding-bottom: 10px;
+ }
+ .Act1{
+  width: 25%;
+  padding-right: 10px;
+ }
+ #Actor1 .Ac1 .A1N{
+  font-size: 15px;
+ }
+ #Actor1 .Ac1 .A1U{
+  font-size: 14px;
+  color: #ffc107;
+  float: Left;
+ }
+  #Actor2{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  Display: flex;
+  padding-bottom: 10px;
+ }
+ .Act2{
+  width: 25%;
+  padding-right: 10px;
+ }
+  #Actor2 .Ac2 .A2N{
+  font-size: 15px;
+ }
+ #Actor2 .Ac2 .A2U{
+  font-size: 14px;
+  color: #ffc107;
+  float: Left;
+ }
+  #Actor3{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  Display: flex;
+ }
+  .Act3{
+  width: 25%;
+  padding-right: 10px;
+ }
+  #Actor3 .Ac3 .A3N{
+  font-size: 15px;
+ }
+ #Actor3 .Ac3 .A3U{
+  font-size: 14px;
+  color: #ffc107;
+  float: Left;
+ }
+  #Player{
+   background-color: rgba(0, 0, 0, 0.7);
+  width: 650px;
+  height: 46.7vh;
+  margin-left: 5px;
+  margin-right: 5px;
+  float: center;
+  padding: 10px;
+ }
+  #Server{
+   background-color: rgba(0, 0, 0, 0.7);
+  width: 330px;
+  height: 46.7vh;
+  float: right;
+  color: #ffc107;
+  font-family: 'Lemonada', cursive;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+
+ }
+ .Trailer{
+  background-color: #FEC107;
+  color: black;
+  width: 200px;
+  height: 40px;
+  font-size: 21px;
+  font-family: 'Lemonada', cursive;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  padding-top: 7px;
+  font-style: bold;
+  border-radius: 8px;
+ }
+  .Server1{
+    background-color: #FEC107;
+    color: black;
+    width: 200px;
+    height: 40px;
+    font-family: 'Lemonada', cursive;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    padding-top: 7px;
+    font-style: bold;
+    border-radius: 8px;
+ }
+  .Server2{
+    background-color: #FEC107;
+    color: black;
+    width: 200px;
+    height: 40px;
+    font-family: 'Lemonada', cursive;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    padding-top: 7px;
+    font-style: bold;
+    border-radius: 8px;
+ }
+  .Download1{
+    background-color: #FEC107;
+    color: black;
+    width: 200px;
+    height: 40px;
+    font-family: 'Lemonada', cursive;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    padding-top: 7px;
+    font-style: bold;
+    border-radius: 8px;
+ }
+  .Download2{
+    background-color: #FEC107;
+    color: black;
+    width: 200px;
+    height: 40px;
+    font-family: 'Lemonada', cursive;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    padding-top: 7px;
+    font-style: bold;
+    border-radius: 8px;
+ }
+  #Ads{
+   background-color: rgba(0, 0, 0, 0.7);
+  width: 1320px;
+  height: 30vh;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ #Copyright{
+   background-color: rgba(0, 0, 0, 0.7);
+  width: 1320px;
+  height: 13vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 18px;
+  font-size: 15px;
+  font-family: 'Lemonada', cursive;
+ }
+

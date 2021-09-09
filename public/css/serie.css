@@ -1,0 +1,373 @@
+html{
+    font-family: 'Lemonada', cursive;
+}
+section{
+    padding: 10px;
+}
+.infos{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    width: 100%;
+    height: 275px;
+    padding: 10px;
+}
+.part1{
+    float: left;
+    position: relative;
+    height: 20%;
+    top: -7rem;
+
+}
+
+.movie_image{
+    position: relative;
+    top: 9rem;
+    left: 5rem
+}
+
+.movie_image img{
+    border: 1px solid #FEC107;
+  border-radius: 4px;
+  padding: 5px;
+  width: 178px;
+  position: relative;
+  top: -2rem;
+}
+
+.part2{
+    float: right;
+    text-align: right;
+    position: relative;
+    height: 20%;
+    top: -7rem;
+
+}
+.cat{
+    display: flex;
+}
+.cra{
+    display: flex;
+}
+.date{
+    display: flex;
+}
+.imdb{
+    display: flex;
+}
+.dura{
+    display: flex;
+}
+.qua{
+    display: flex;
+}
+.lan{
+    margin-bottom: 1em;
+}
+.con{
+    margin-bottom: 1em;
+}
+.sto{
+    margin-bottom: 1em;
+}
+.cat h4{
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+
+
+.cra h4{
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+.eng{
+
+    position: relative;
+    left: 27rem;
+    /* top: -4rem; */
+    bottom: 18rem;
+}
+
+span{
+    color: #FEC107;
+    font-family: 'Lemonada', cursive;
+}
+
+.eng h1{
+    color: #FEC107;
+    font-size: 3rem;
+    font-family: 'Lemonada', cursive;
+    margin-left: -5.5em;
+}
+.eng h4{
+     color:  #fff;
+     font-family: 'Lemonada', cursive;
+ }
+.arb h4{
+    display: unset;
+     color:  #fff;
+     font-family: 'Lemonada', cursive;
+ }
+.eng h4{
+    display: flex;
+}
+.arb{
+    position: relative;
+    bottom: -7rem;
+    width: 40%;
+    right: -101rem;
+}
+.adb{
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    width: 83%;
+    position: relative;
+    padding: 10px;
+    top: 1em;
+    left: 31rem;
+}
+.adb p{
+    text-align-last: center;
+    font-family: 'Lemonada', cursive;
+}
+.big-div{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    height: 51rem;
+    width: 16%;
+    top: -4rem;
+
+}
+.big-div h5{
+    color: white;
+    font-size: 15px;
+    font-family: 'Lemonada', cursive;
+}
+.div1 img{
+    border-radius: 4px;
+    padding: 5px;
+    width: 106px;
+    position: relative;
+    top: -2rem;
+}
+.div2 img{
+    border-radius: 4px;
+    padding: 5px;
+    width: 106px;
+    position: relative;
+    top: -2rem;
+}
+.div3 img{
+    border-radius: 4px;
+    padding: 5px;
+    width: 106px;
+    position: relative;
+    top: -2rem;
+}
+    .actors{
+    position: relative;
+    left: 14rem;
+    bottom: 10rem;
+    }
+
+
+
+.div1{
+position: relative;
+bottom: -3rem
+
+}
+.div2{
+    position: relative;
+    bottom: 1rem
+}
+.div3{
+    position: relative;
+ bottom: 5rem;
+
+}
+
+
+#Server{
+    float: right;
+    text-align: right;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 300px;
+    height: 38.7vh;
+    top: -94rem;
+    bottom: 69rem;
+    float: right;
+    color: #ffc107;
+    font-family: 'Lemonada', cursive;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+
+   }
+   .Trailer{
+    background-color: #ffc107;
+    width: 200px;
+    height: 40px;
+    color: #000;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 38px;
+    padding-top: 7px;
+    /* border-radius: 5%; */
+    /* border-radius: 25% 10%; */
+    border-radius: 25px;
+    font-style: bold;
+   }
+    .Server1{
+    background-color: #ffc107;
+    color: #000;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    border-radius: 25px;
+   }
+    .Server2{
+    background-color: #ffc107;
+    color: #000;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    border-radius: 25px;
+   }
+    .Download1{
+    background-color: #ffc107;
+    color: #000;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    border-radius: 25px;
+   }
+    .Download2{
+    background-color: #ffc107;
+    color: #000;
+    width: 200px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7px;
+    border-radius: 25px;
+   }
+
+
+.videos{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 30rem;
+    left: 31rem;
+    bottom: 58rem;
+    width: 66%;
+
+}
+.swiper {
+    width: 56%;
+    height: 29%;
+    position: relative;
+    top: 31rem;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide h5{
+      position: relative;
+      left: 20rem;
+  }
+  .swiper-slide,.poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text{
+      position: relative;
+
+  }
+  .swiper-slide,.poster h6{
+      color: #FEC107;
+      font-size: 2rem;
+  }
+
+.main {
+font-family: Arial;
+width: 97rem;
+left: 2rem;
+display: block;
+position: relative;
+margin: 100px auto;
+}
+h3 {
+background: #fff;
+color: #3498db;
+font-size: 36px;
+line-height: 100px;
+margin: 10px;
+padding: 2%;
+position: relative;
+text-align: center;
+}
+.action{
+display:block;
+margin:100px auto;
+width:100%;
+text-align:center;
+}
+.action a {
+display:inline-block;
+padding:5px 10px;
+background:#f30;
+color:#fff;
+text-decoration:none;
+}
+.action a:hover{
+background:#000;
+}
+.part{
+position: relative;
+padding: 18px;
+width: 100px;
+}
+.part h6{
+text-align-last: center;
+margin-left: -10rem;
+font-size: 19px;
+font-family: 'Lemonada', cursive;
+}
+.part img{
+
+padding: 5px;
+width: 150px;
+}

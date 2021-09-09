@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+
+:root {
+	--color-primary: #D7A200;
+	--color-primary-dark: #1e679b;
+	--color-primary-dark-btn: #164769;
+	--color-primary-light: #228bd6;
+	--color-secondary: #e1bf00;
+	--color-black: #000;
+	--color-black-light: #141414;
+	--color-bg-primary: #131313;
+	--color-bg-header: #ffca28;
+	--color-bg-light: #272020;
+	--color-text: #ebebeb;
+	--color-text-dark: #959595;
+}
+
+*,
+::before,
+::after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit
+}
+
+html {
+	font-size: 62.5%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+@media (max-width: 1200px) {
+	html {
+		font-size: 57%
+	}
+}
+
+@media (max-width: 900px) {
+	html {
+		font-size: 55%
+	}
+}
+
+
+
+
+body {
+	font-size: 1.8rem;
+	line-height: 1.35;
+	font-family: 'Noto Sans', sans-serif;
+	background-color: var(--color-bg-primary);
+	/*min-height: 300vh;*/
+	color: var(--color-text)
+}
+
+
+
+
+.container1 {
+	padding: 0 8rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+}
+
+@media (max-width: 900px) {
+	.container1 {
+		padding: 0 4rem
+	}
+}
+
+@media (max-width: 600px) {
+	.container1 {
+		padding: 0
+	}
+}
+
+@media (min-width: 1400px) {
+	.container1 {
+		padding: 0 15rem
+	}
+}
+
+@media (min-width: 1800px) {
+	.container1 {
+		padding: 0 20rem
+	}
+}
+
+
+
+
+.colling {
+	position: relative;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 16.66666667%;
+	flex: 0 0 16.66666667%
+}
+
+@media (max-width: 900px) {
+	.colling {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 25%;
+		flex: 0 0 25%
+	}
+}
+
+@media (max-width: 600px) {
+	.colling {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%
+	}
+}
+
+@media (min-width: 1800px) {
+	.colling {
+		-webkit-box-flex: 0;
+		-ms-flex: 0 0 12.5%;
+		flex: 0 0 15.5%;
+	}
+}
+
+.poster {
+	height: 21vw
+}
+
+@media (max-width: 1200px) {
+	.poster {
+		height: 20vw
+	}
+}
+
+@media (max-width: 900px) {
+	.poster {
+		height: 31vw
+	}
+}
+
+@media (max-width: 600px) {
+	.poster {
+		height: 75vw
+	}
+}
+
+@media (min-width: 1400px) {
+	.poster {
+		height: 18vw
+	}
+}
+
+@media (min-width: 1800px) {
+	.poster {
+		height: 15vw
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.poster {
+	position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-box-shadow: 0 1rem 3rem rgb(0 0 0 / 30%);
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 30%);
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.poster__watched {
+	top:1rem;
+	left:1rem;
+	z-index: 50;
+	color:#fff;
+	opacity: .4;
+}
+
+.poster__eps {
+	z-index: 50;
+	color: black;
+	right: 1rem;
+	top: 1rem;
+	background-color: var(--color-primary);
+	opacity: .3;
+	box-shadow: 0 1rem 5rem rgba(0, 0, 0, 1)
+}
+
+.poster__link>* {
+	position: absolute;
+	-webkit-transition: all .2s;
+	transition: all .2s
+}
+
+.poster__img {
+	width: 100%;
+	height: 100%
+}
+
+
+.poster__button {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	color: #fff;
+	display: none;
+    margin-top: 2rem;
+    margin-left: 2rem;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 10rem;
+	height: 10rem
+}
+
+/* .poster__button:hover {
+	-webkit-transform: translate(-50%, -50%) scale(1.2);
+	transform: translate(-50%, -50%) scale(1.2);
+	color: var(--color-primary)
+} */
+
+.poster__play-icon {
+	width: inherit;
+	height: inherit;
+	fill: currentColor
+}
+
+.poster__title {
+	bottom: 0;
+	text-align: center;
+	left: 0;
+	color: #fff;
+	padding: .4rem;
+	font-size: 1.5rem;
+	width: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background-color: rgba(0, 0, 0, 0.8);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.caption {
+	font-size: 1.2rem;
+    bottom: 0;
+    width: 100%;
+    padding: 3px;
+    text-overflow: ellipsis;
+	overflow: hidden;
+	display:flex;
+	justify-content: space-between;
+	transition:all .3s;
+	margin-bottom: -2.3rem;
+}
+
+.poster:hover .caption {
+	margin-bottom: 0;
+}
+
+.poster:hover .poster__title {
+	white-space: normal;
+	text-overflow: initial;
+}
+
+/* .poster:hover .poster__img {
+	-webkit-filter: brightness(30%);
+	filter: brightness(30%)
+} */
+
+.poster:hover .poster__button {
+	display: block
+}
+
+.poster:hover .poster__eps, .poster:hover .poster__watched {
+	opacity: 1
+}
+

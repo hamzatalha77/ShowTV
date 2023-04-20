@@ -7,24 +7,31 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>All Movies</h1>
 @stop
 
 @section('content')
+    @if($movies[0]->special==true)
+    <a href="{{ route('disabel') }}"> Disable Special Server</a>
+        @else
+        <a href="{{ route('enable') }}"> Enable Special Server</a>
+    @endif
 
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
         <tr>
             <th>#</th>
             <th>Movie Image</th>
+            <th>Movie Poster</th>
             <th>Movie Name</th>
             <th>Description</th>
             <th>Category</th>
             <th>User Name</th>
             <th>Quality</th>
             <th>IMDB</th>
-            <th>Tags</th>
+            <th>Class</th>
             <th>Visible</th>
+            <th>Top</th>
             <th>Action</th>
 
         </tr>
@@ -34,7 +41,8 @@
                 @foreach ($movies as $movie)
                 {{-- {{ $movies->count() }} --}}
                 <td>{{$movie->id}}</td>
-                 <td> <img src="{{ asset('image1/' .$movie->image_movie) }}" alt="" style="width:90px"></td>
+                 <td> <img src="{{ $movie->image_movie }}" alt="" style="width:90px"></td>
+                 <td> <img src="{{ $movie->image_poster_movie }}" alt="" style="width:90px"></td>
                     <td>{{$movie->movie_name}}</td>
                     <td>{{$movie->description}}</td>
                     <td>
@@ -47,10 +55,16 @@
                     <td>{{$movie->user_name}}</td>
                     <td>{{$movie->quality}}</td>
                     <td>{{$movie->imdb}}</td>
-                    <td>{{$movie->tags}}</td>
+                    <td>{{$movie->class}}</td>
                     <td>
                         <label class="switch">
                         <input data-id="{{$movie->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $movie->status ? 'checked' : '' }}>
+                        <span class="slider round"></span>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="switch">
+                        <input data-id="{{$movie->id}}" class="top-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $movie->top ? 'checked' : '' }}>
                         <span class="slider round"></span>
                         </label>
                     </td>
@@ -165,6 +179,24 @@
             })
         })
     </script>
+    <script>
+        $(function() {
+            $('.top-class').change(function() {
+                var top = $(this).prop('checked') == true ? 1 : 0;
+                var movie_id = $(this).data('id');
+
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: '/changeTopMovie',
+                    data: {'top': top, 'movie_id': movie_id},
+                    success: function(data){
+                        console.log(data.success)
+                    }
+                });
+            })
+        })
+    </script>
 <script>
     $(document).ready(function() {
     $('#example').DataTable();
@@ -174,14 +206,19 @@
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
-    @if(Session::has('userdeleted'))
+    @if(Session::has('movieadd'))
         <script>
-            swal("Good job!", "User Has Been Deleted!!", "success");
+            swal("Good job!", "New Movie Has Been Added!!", "success");
         </script>
     @endif
-    @if(Session::has('userupdate'))
+    @if(Session::has('moviedeleted'))
         <script>
-            swal("Good job!", "New User Has Been Updated Successfully!!", "success");
+            swal("Good job!", "Movie Has Been Deleted!!", "danger");
+        </script>
+    @endif
+    @if(Session::has('movieupdate'))
+        <script>
+            swal("Good job!", "Movie Has Been Updated Successfully!!", "info");
         </script>
     @endif
 @stop

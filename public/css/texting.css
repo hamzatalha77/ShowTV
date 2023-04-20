@@ -1,0 +1,109 @@
+
+:root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #34495e;
+    --darkgray: #FEC107;;
+  }
+  html{
+    font-family: 'Lemonada', cursive;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&family=Lemonada:wght@300&display=swap');
+  select {
+    font-family: 'Lemonada', cursive;
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 13px;
+    flex: 1;
+    line-height: 31px;
+    font-size: 20px;
+    padding: 0 1em;
+    color: #000;
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    border-radius: 13px;
+    position: relative;
+    display: flex;
+    padding-left: 52px;
+    width: 14em;
+    height: 3em;
+    line-height: 16px;
+    font-family: 'Lemonada', cursive;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: #FEC107;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+  /* Other styles*/
+  body {
+    font-family: 'Lemonada', cursive;
+  }
+
+
+.section{
+    font-family: 'Lemonada', cursive;
+    display: flex;
+    padding: 10px;
+    width: 99%;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.left{
+    font-family: 'Lemonada', cursive;
+    float: left;
+    display: flex;
+    margin-left: 104px;
+
+}
+.section .right{
+    float: right;
+    font-family: 'Lemonada', cursive;
+    position: relative;
+    /* right: -6%; */
+    left: 33%;
+}
+
+.con{
+    font-family: 'Lemonada', cursive;
+    padding: 14px;
+    font-size: 20px;
+    width: 219px;
+    text-align: center;
+    /* padding-top: 10px; */
+    line-height: 26px;
+    height: 55px;
+    /* margin-top: 10px; */
+    color: #000;
+    background: #FEC107;
+    border-radius: 13px;
+}
+.btn1{
+    font-size: 20px;
+    font-family: 'Lemonada', cursive;
+    width: 12rem;
+    height: 55px;
+    background: #FEC107;
+    border-radius: 13px;
+}

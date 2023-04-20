@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/images/favLogo.png" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -13,20 +14,20 @@
     <link rel="stylesheet" href="/css/list.css">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Telfazy | المسلسلات</title>
 </head>
 <body>
+    @include('telfazy.loading')
+    @include('telfazy.navbar3')
 
-    @include('telfazy.navbar2')
-
-    <div class="container1 more">
+    <div class="container1 more" style="margin-bottom: 0px; min-height: 70%;">
 
         @foreach ($series as $serie)
 
         <div class="colling">
 <div class="poster">
-    <a href="{{ route('showserie', $serie->id) }}" title="Watch Now" class="poster__link">
-        <img class="poster__img lazy"src="{{ asset('image1/' .$serie->serie_photo) }}">
+    <a href="{{ route('showserie', $serie->id) }}" title="{{ $serie->serie_name }}  شاهد الان " class="poster__link">
+        <img class="poster__img lazy"src="{{ $serie->serie_photo }}">
         <div class="poster__button">
             <i class="fas fa-play-circle fa-4x"></i>
         </div>
@@ -46,7 +47,8 @@
 
 @endforeach
 </div>
-
+{{ $series->links('telfazy/pagination') }}
     @include('telfazy/footer')
+    <script src="/js/loading.js"></script>
 </body>
 </html>

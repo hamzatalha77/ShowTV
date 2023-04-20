@@ -14,8 +14,8 @@ class CreateCategoryMovieTable extends Migration
     public function up()
     {
         Schema::create('category_movie', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('movie_id');
+            $table->integer('category_id')->unsigned();
+            $table->integer('movie_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('movie_id')->references('id')->on('movies')->onUpdate('cascade')->onDelete('cascade');
         });

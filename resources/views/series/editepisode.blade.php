@@ -19,12 +19,40 @@
       <input type="text" class="form-control" value="{{ $episode->episode_name }}" name="episode_name">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Episode Link</label>
-      <input type="text" class="form-control" name="episode_link" value="{{ $episode->episode_link }}" id="exampleInputPassword1">
+      <label for="exampleInputPassword1" class="form-label">Server 1</label>
+      <input type="text" class="form-control" name="server_1" value="{{ $episode->server_1 }}" id="exampleInputPassword1">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Episode Download Link</label>
-      <input type="text" class="form-control" name="download_link" value="{{ $episode->download_link }}" id="exampleInputPassword1">
+      <label for="exampleInputPassword1" class="form-label">Server 2</label>
+      <input type="text" class="form-control" name="server_2" value="{{ $episode->server_2 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Server 3</label>
+      <input type="text" class="form-control" name="server_3" value="{{ $episode->server_3 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Server 4</label>
+      <input type="text" class="form-control" name="server_4" value="{{ $episode->server_4 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Server 5</label>
+      <input type="text" class="form-control" name="server_5" value="{{ $episode->server_5 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Server 6</label>
+      <input type="text" class="form-control" name="server_6" value="{{ $episode->server_6 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Episode Download Link 1</label>
+      <input type="text" class="form-control" name="download_link_1" value="{{ $episode->download_link_1 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Episode Download Link 2</label>
+      <input type="text" class="form-control" name="download_link_2" value="{{ $episode->download_link_2 }}" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Episode Download Link 3</label>
+      <input type="text" class="form-control" name="download_link_3" value="{{ $episode->download_link_3 }}" id="exampleInputPassword1">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">IMDB Episode</label>
@@ -49,19 +77,7 @@
         <input type="radio" name="quality" {{ $episode->quality == '480p' ? 'checked' : ''}} value="480p"class="form-check-input">
         <label class="form-check-label" for="inlineRadio2">480p</label>
       </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" name="quality" {{ $episode->quality == '360p' ? 'checked' : ''}} value="360p"class="form-check-input">
-        <label class="form-check-label" for="inlineRadio2">360p</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" name="quality" {{ $episode->quality == '240p' ? 'checked' : ''}} value="240p"class="form-check-input">
-        <label class="form-check-label" for="inlineRadio2">240p</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input type="radio" name="quality" {{ $episode->quality == '144p' ? 'checked' : ''}} value="144p"class="form-check-input">
-        <label class="form-check-label" for="inlineRadio2">144p</label>
-      </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Edit Episode</button>
   </form>
 @stop
 

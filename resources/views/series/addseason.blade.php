@@ -11,11 +11,16 @@
 <form action="{{ route('newseasons',[$serie->id]) }}" method="POST" enctype="multipart/form-data" autocomplete="off" class="fromi">
 @csrf
 <input  type="text" name="user_name" value="{{Auth::user()->name}}" class="form-control" id="user_name" hidden>
-<input id="input-b1" name="photo_season" type="file" class="file" data-browse-on-zone-click="true">
+<!-- <input id="input-b1" name="photo_season" type="file" class="file" data-browse-on-zone-click="true"> -->
 <h1>{{$serie->serie_name}}</h1>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Season Name</label>
       <input type="text" class="form-control" name="season_name" value="{{$serie->serie_name}}" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <input type="text" name="views" value="0" hidden>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Season image</label>
+      <input type="text" class="form-control" name="photo_season" value="{{$serie->photo_season}}" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Season Number</label>
@@ -25,11 +30,7 @@
         <label>Youtube Link</label>
         <input type="text" name="youtube_link" class="metro-input">
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">IMDB Season</label>
-      <input type="text" class="form-control" name="imdb_season" id="exampleInputPassword1">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Add Season</button>
   </form>
 @stop
 

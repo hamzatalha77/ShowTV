@@ -1,24 +1,9 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/navbar.css">
-<style>
-    .column {
-float: left;
-width: 33.33%;
-padding: 10px;
-height: 355px;
-}
 
-.column a {
-float: none;
-color: black;
-padding: 16px;
-text-decoration: none;
-display: block;
-text-align: left;
-}
-</style>
 <section class="ftco-section" style="padding: 10px">
 
 
@@ -27,7 +12,7 @@ text-align: left;
             <div class="col-md-8 order-md-last">
                 <div class="row">
                     <div class="col-md-6 text-center">
-                        <a class="navbar-brand" href="{{ route('allshows') }}"><img src="/images/logo.png" style="width: 100px;
+                        <a class="navbar-brand" href="{{ route('telfazy.index') }}"><img src="/images/logo.png" style="width: 100px;
                             height: 100px;
                             position: relative;
                             top: 1em;"></a>
@@ -54,70 +39,57 @@ text-align: left;
             </div>
         </div>
     </div>
-    <form action="{{ route('navbar') }}" method="GET">
+
     <nav class="navbar navbar-expand-lg  ftco_navbar  ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid">
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="fa fa-bars"></span> Menu
+        <span class="fa fa-bars"></span> قائمة رئيسية
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav m-auto">
-            <li class="nav-item active"><a href="{{ route('allshows') }}" class="nav-link">Home</a></li>
+
+            <li class="nav-item"><a href="{{ route('allanimes') }}" class="nav-link">الانمي</a></li>
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{{ route('listmovies') }}" id="dropdown04" aria-haspopup="true" aria-expanded="false">Movies</a>
+          <a class="nav-link dropdown-toggle" href="{{ route('listmovies') }}" id="dropdown04" aria-haspopup="true" aria-expanded="false">الافلام</a>
           <div class="dropdown-menu" aria-labelledby="dropdown04">
 
             <div class="column">
 
-                @foreach($categories2 as $category)
-                <a href="{{ route('category', $category->id) }}"class="dropdown-item">{{ $category->category }}</a>
+                @foreach ($class as $item)
+                    <a href="{{ route('searchbytype',$item->class) }}" class="dropdown-item">{{ $item->class }} </a>
                 @endforeach
-            </div>
-                <div class="column">
-                @foreach($categories1 as $category)
-                <a href="{{ route('category', $category->id) }}"class="dropdown-item">{{ $category->category }}</a>
-                @endforeach
-            </div>
-                <div class="column">
-                @foreach($categories3 as $category)
-                <a href="{{ route('category', $category->id) }}"class="dropdown-item">{{ $category->category }}</a>
-                @endforeach
+
         </div>
 
           </div>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{{ route('listseries') }}" id="dropdown04" aria-haspopup="true" aria-expanded="false">Series</a>
+            <a class="nav-link dropdown-toggle" href="{{ route('listseries') }}" id="dropdown04" aria-haspopup="true" aria-expanded="false">المسلسلات</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
               <div class="column">
-                @foreach($genres2 as $genre)
-                <a href="{{ route('genre', $genre->id) }}" class="dropdown-item">{{ $genre->genre }}</a>
-                @endforeach
-              </div>
-              <div class="column">
-                @foreach($genres3 as $genre)
-                <a href="{{ route('genre', $genre->id) }}" class="dropdown-item">{{ $genre->genre }}</a>
-                @endforeach
-              </div>
-              <div class="column">
-                @foreach($genres1 as $genre)
-                <a href="{{ route('genre', $genre->id) }}" class="dropdown-item">{{ $genre->genre }}</a>
+                @foreach ($serieclass as $item2)
+                    <a href="{{ route('searchbytypeserie',$item2->class_serie) }}" class="dropdown-item">{{ $item2->class_serie }} </a>
                 @endforeach
 
           </div>
           </div>
-            </div>
           </li>
+          <li class="nav-item active"><a href="{{ route('telfazy.index') }}" class="nav-link">الرئيسية</a></li>
         </ul>
-      </div>
-    </div>
-       </form>
-  </nav>
+            </div>
 
-<!-- END nav -->
+      </div>
+</nav>
 
 </section>
+<script type="text/javascript">
+    $(document).on('click', 'ul li', function(){
+        $(this).addClass('active').siblings().removeClass('active')
+    })
+
+
+</script>
 <script src="/js/jquery.min.js"></script>
   <script src="/js/popper.js"></script>
   <script src="/js/bootstrap.min.js"></script>

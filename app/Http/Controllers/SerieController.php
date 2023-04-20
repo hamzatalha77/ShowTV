@@ -20,9 +20,22 @@ class SerieController extends Controller
      */
     public function index()
     {
-        //
+        $series = Serie::with('genres')->get();
+        return view('series.allseries', compact('series'));
+    }
+    public function disabel()
+    {
+        $series = DB::select("UPDATE series SET `special`=0");
+
+         return redirect(route('series.index'));
     }
 
+    public function enable()
+    {
+        $series = DB::select("UPDATE series SET `special`=1");
+
+         return redirect(route('series.index'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -72,12 +85,14 @@ class SerieController extends Controller
         $serie->serie_name = $request->input('serie_name');
         $serie->description = $request->input('description');
         $serie->age_classification = $request->input('age_classification');
+        $serie->class_serie = $request->input('class_serie');
         $serie->language = $request->input('language');
         $serie->imdb = $request->input('imdb');
         $serie->user_name = $request->input('user_name');
         $serie->country = $request->input('country');
         $serie->youtube_link = $request->input('youtube_link');
         $serie->tags = $request->input('tags');
+        $serie->views = $request->input('views');
         $serie->name_producer = $request->input('name_producer');
         $serie->real_name_actor1 = $request->input('real_name_actor1');
         $serie->real_name_actor2 = $request->input('real_name_actor2');
@@ -86,45 +101,16 @@ class SerieController extends Controller
         $serie->name_actor2 = $request->input('name_actor2');
         $serie->name_actor3 = $request->input('name_actor3');
         $serie->date_release = $request->input('date_release');
-        if($request->hasfile('serie_photo')){
-            $file = $request->file('serie_photo');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $serie->serie_photo = $filename;
-        }
-        if($request->hasfile('photo_productor')){
-            $file = $request->file('photo_productor');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image2', $filename);
-            $serie->photo_productor = $filename;
-        }
-        if($request->hasfile('photo_actor1')){
-            $file = $request->file('photo_actor1');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image3', $filename);
-            $serie->photo_actor1 = $filename;
-        }
-        if($request->hasfile('photo_actor2')){
-            $file = $request->file('photo_actor2');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image4', $filename);
-            $serie->photo_actor2 = $filename;
-        }
-        if($request->hasfile('photo_actor3')){
-            $file = $request->file('photo_actor3');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image5', $filename);
-            $serie->photo_actor3 = $filename;
-        }
+        $serie->serie_photo = $request->input('serie_photo');
+        $serie->photo_productor = $request->input('photo_productor');
+        $serie->photo_actor1 = $request->input('photo_actor1');
+        $serie->photo_actor2 = $request->input('photo_actor2');
+        $serie->photo_actor3 = $request->input('photo_actor3');
+        $serie->image_poster_serie = $request->input('image_poster_serie');
         $serie->save();
         $serie->genres()->attach($request->genres_id);
-
-        return view('series.allseries');
+        Session::flash('serieadded');
+        return redirect(route('series.show',$serie));
     }
 
     public function newseason(Request $request, $id)
@@ -132,24 +118,18 @@ class SerieController extends Controller
         $serie = Serie::find($id);
         $season = new Season;
         $season->season_name = $request->input('season_name');
-        $season->imdb_season = $request->input('imdb_season');
         $season->user_name = $request->input('user_name');
         $season->youtube_link = $request->input('youtube_link');
+        $season->views = $request->input('views');
         $season->serie_id = $serie->id;
         $season->number = $request->input('number');
-
-        if($request->hasfile('photo_season')){
-            $file = $request->file('photo_season');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $season->photo_season = $filename;
-        }
+        $season->photo_season = $request->input('photo_season');
         //$serie = Serie::find(1);
        // $season->series()->associate($serie);
 
        $season->save();
-       return view('series.allseries');
+       Session::flash('seasonadded');
+       return redirect(route('showseasons',$serie->id));
     }
 
     public function addepisode(Request $request, $id)
@@ -157,10 +137,18 @@ class SerieController extends Controller
         $season = Season::find($id);
         $episode = new Episode;
         $episode->episode_name = $request->input('episode_name');
-        $episode->episode_link = $request->input('episode_link');
         $episode->user_name = $request->input('user_name');
         $episode->quality = $request->input('quality');
-        $episode->download_link = $request->input('download_link');
+        $episode->server_1 = $request->input('server_1');
+        $episode->server_2 = $request->input('server_2');
+        $episode->server_3 = $request->input('server_3');
+        $episode->server_4 = $request->input('server_4');
+        $episode->server_5 = $request->input('server_5');
+        $episode->server_6 = $request->input('server_6');
+        $episode->views = $request->input('views');
+        $episode->download_link_1 = $request->input('download_link_1');
+        $episode->download_link_2 = $request->input('download_link_2');
+        $episode->download_link_3 = $request->input('download_link_3');
         $episode->imdb_episode = $request->input('imdb_episode');
         $episode->duration = $request->input('duration');
         $episode->season_id = $season->id;
@@ -170,7 +158,8 @@ class SerieController extends Controller
        // $season->series()->associate($serie);
 
         $episode->save();
-        return redirect()->back();
+        Session::flash('episodeadded');
+        return redirect(route('showepisodes',$season->id));
     }
     /**
      * Display the specified resource.
@@ -288,6 +277,7 @@ class SerieController extends Controller
         $serie->serie_name = $request->input('serie_name');
         $serie->description = $request->input('description');
         $serie->age_classification = $request->input('age_classification');
+        $serie->class_serie = $request->input('class_serie');
         $serie->language = $request->input('language');
         $serie->imdb = $request->input('imdb');
         $serie->user_name = $request->input('user_name');
@@ -302,72 +292,17 @@ class SerieController extends Controller
         $serie->name_actor2 = $request->input('name_actor2');
         $serie->name_actor3 = $request->input('name_actor3');
         $serie->date_release = $request->input('date_release');
-
-        if($request->hasfile('serie_photo')){
-            $destination = 'image1'.$serie->serie_photo;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('serie_photo');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $serie->serie_photo = $filename;
-        }
-        if($request->hasfile('photo_productor')){
-            $destination = 'image2'.$serie->photo_productor;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_productor');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image2', $filename);
-            $serie->photo_productor = $filename;
-        }
-        if($request->hasfile('photo_actor1')){
-            $destination = 'image3'.$serie->photo_actor1;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor1');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image3', $filename);
-            $serie->photo_actor1 = $filename;
-        }
-        if($request->hasfile('photo_actor2')){
-            $destination = 'image4'.$serie->photo_actor2;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor2');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image4', $filename);
-            $serie->photo_actor2 = $filename;
-        }
-        if($request->hasfile('photo_actor3')){
-            $destination = 'image5'.$serie->photo_actor3;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor3');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image5', $filename);
-            $serie->photo_actor3 = $filename;
-        }
+        $serie->serie_photo = $request->input('serie_photo');
+        $serie->photo_productor = $request->input('photo_productor');
+        $serie->photo_actor1 = $request->input('photo_actor1');
+        $serie->photo_actor2 = $request->input('photo_actor2');
+        $serie->photo_actor3 = $request->input('photo_actor3');
+        $serie->image_poster_serie = $request->input('image_poster_serie');
         $serie->save();
         $serie->genres()->sync($request->genres_id);
 
-        Session::flash('serieupdated','User Has Been updated successfully!!!!!!!!!!!!!!!!!');
-        return view('series.allseries');
+        Session::flash('serieupdated');
+        return redirect(route('series.show',$serie->id));
     }
     public function editseason($id)
     {
@@ -386,29 +321,16 @@ class SerieController extends Controller
     {
         $season = Season::find($id);
         $season->season_name = $request->input('season_name');
-        $season->imdb_season = $request->input('imdb_season');
         $season->user_name = $request->input('user_name');
         $season->youtube_link = $request->input('youtube_link');
         $season->number = $request->input('number');
-
-        if($request->hasfile('photo_season')){
-            $destination = 'image1'.$season->photo_season;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_season');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $season->photo_season = $filename;
-        }
+        $season->photo_season = $request->input('photo_season');
         //$serie = Serie::find(1);
        // $season->series()->associate($serie);
        $season->save();
-       Session::flash('serieupdated','User Has Been updated successfully!!!!!!!!!!!!!!!!!');
+       Session::flash('seasonupdated');
        //return view('series.allseasons');
-       return redirect()->back();
+       return redirect(route('showseasons',$season->serie_id));
     }
     public function editepisode($id)
     {
@@ -427,10 +349,17 @@ class SerieController extends Controller
     {
         $episode = Episode::find($id);
         $episode->episode_name = $request->input('episode_name');
-        $episode->episode_link = $request->input('episode_link');
         $episode->user_name = $request->input('user_name');
         $episode->quality = $request->input('quality');
-        $episode->download_link = $request->input('download_link');
+        $episode->server_1 = $request->input('server_1');
+        $episode->server_2 = $request->input('server_2');
+        $episode->server_3 = $request->input('server_3');
+        $episode->server_4 = $request->input('server_4');
+        $episode->server_5 = $request->input('server_5');
+        $episode->server_6 = $request->input('server_6');
+        $episode->download_link_1 = $request->input('download_link_1');
+        $episode->download_link_2 = $request->input('download_link_2');
+        $episode->download_link_3 = $request->input('download_link_3');
         $episode->imdb_episode = $request->input('imdb_episode');
         $episode->duration = $request->input('duration');
 
@@ -439,7 +368,8 @@ class SerieController extends Controller
        // $season->series()->associate($serie);
 
         $episode->save();
-        return redirect()->back();
+        Session::flash('episodeupdated');
+        return redirect(route('showepisodes',$episode->season_id));
     }
 
     /**
@@ -452,13 +382,14 @@ class SerieController extends Controller
     {
         $serie = Serie::find($id);
         $serie->delete();
-        Session::flash('seriedeleted','User Has Been updated successfully!!!!!!!!!!!!!!!!!');
-        return view('series.allseries');
+        Session::flash('seriedeleted');
+        return redirect(route('series.show',$serie->id));
     }
     public function destroy1($id)
     {
         $season = Season::find($id);
         $season->delete();
+        Session::flash('seasondeleted');
         return redirect()->back();
 
     }
@@ -466,8 +397,15 @@ class SerieController extends Controller
     {
         $episode = Episode::find($id);
         $episode->delete();
-        //Session::flash('episodedeleted','User Has Been updated successfully!!!!!!!!!!!!!!!!!');
+        Session::flash('episodedeleted');
         return redirect()->back();
 
+    }
+    public function changeTopSerie(Request $request)
+    {
+        $serie= Serie::find($request->serie_id);
+        $serie->top = $request->top;
+        $serie->save();
+        return response()->json(['success'=>'Status change successfully.']);
     }
 }

@@ -12,7 +12,7 @@
 
 @section('content')
 <h1>{{$season->serie->serie_name}}</h1>  <h1>{{ $season->number }}</h1>
-<img src="{{ asset('image1/' .$season->photo_season) }}" alt="" style="width:90px">
+<img src="{{ $season->photo_season }}" alt="" style="width:90px">
 <table class="table">
     <thead>
     <tr>
@@ -20,6 +20,7 @@
         <th>Episode name</th>
         <th>User Name</th>
         <th>IMDB episode</th>
+        <th>Visible</th>
         <th>Action</th>
 
     </tr>
@@ -41,8 +42,9 @@
                  <form action="{{ route('destroy2',$episode->id) }}" method="POST">
 
 
-                     <a class="btn btn-info" href="{{ route('theep', $episode->id) }}">Show</a>
+
                     <a class="btn btn-warning" href="{{ route('editepisode', $episode->id) }}">Edit</a>
+                          <a class="btn btn-info" href="{{ route('myepisode', $episode->id) }}">Show</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -142,14 +144,19 @@
     })
 </script>
 <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+@if(Session::has('episodeadded'))
+    <script>
+        swal("Good job!", "New Episode Has Been Added!!", "success");
+    </script>
+@endif
 @if(Session::has('episodedeleted'))
     <script>
-        swal("Good job!", "User Has Been Deleted!!", "success");
+        swal("Good job!", "Episode Has Been Deleted!!", "success");
     </script>
 @endif
 @if(Session::has('episodeupdated'))
     <script>
-        swal("Good job!", "New User Has Been Updated Successfully!!", "success");
+        swal("Good job!", "Episode Has Been Updated Successfully!!", "success");
     </script>
 @endif
 @stop

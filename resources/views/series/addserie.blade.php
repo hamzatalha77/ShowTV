@@ -2,17 +2,17 @@
     $categories = App\Models\Category::get();
 
 @endphp --}}
-@php
+{{-- @php
     $genres = App\Models\Genre::get();
 
-@endphp
+@endphp --}}
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
 
 
 @section('content_header')
-     <h1>Add New Serie</h1>
+ <h1>Add New Serie</h1>
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
     @endif
     <form action="{{ route('addserie') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
         @csrf
-        <input id="input-b1" name="serie_photo" type="file" class="file" data-browse-on-zone-click="true">
+        <!-- <input id="input-b1" name="serie_photo" type="file" class="file" data-browse-on-zone-click="true"> -->
         <div class="myform">
 
             <input  type="text" name="user_name" value="{{Auth::user()->name}}" class="form-control" id="user_name" hidden>
@@ -34,15 +34,24 @@
                 <input type="text" name="serie_name" class="metro-input">
             </div>
             <div class="form-group">
+                <label>Serie Image</label>
+                <input type="text" name="serie_photo" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Image poster</label>
+                <input type="text" name="image_poster_serie" class="metro-input">
+            </div>
+            <input type="text" name="views" value="0" hidden>
+            <div class="form-group">
                 <label>Tags</label>
                 <input type="text" name="tags" data-role="taginput"  class="mt-4" data-random-color="true">
             </div>
             <div class="form-group">
-                <label>Movie Category</label>
+                <label>Serie Genres</label>
                 <select data-role="select" name="genres_id[]" multiple>
                     @foreach ($genres as $genre)
                     <option value="{{ $genre->id }}">{{ $genre->genre }}</option>
-                @endforeach
+                    @endforeach
                 </select>
             </div>
             <div class="form-group">
@@ -401,59 +410,21 @@
             <div class="form-group">
                 <label>Language</label>
                 <select name="language" data-role="select">
-                    <option value="Afrikaans">Afrikaans</option>
-                    <option value="Albanian">Albanian</option>
-                    <option value="Arabic">Arabic</option>
-                    <option value="Armenian">Armenian</option>
-                    <option value="Basque">Basque</option>
-                    <option value="Bengali">Bengali</option>
-                    <option value="Bulgarian">Bulgarian</option>
-                    <option value="Catalan">Catalan</option>
-                    <option value="Cambodian">Cambodian</option>
-                    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
-                    <option value="Croatian">Croatian</option>
-                    <option value="Czech">Czech</option>
-                    <option value="Danish">Danish</option>
-                    <option value="Dutch">Dutch</option>
-                    <option value="English">English</option>
-                    <option value="Estonian">Estonian</option>
-                    <option value="Fiji">Fiji</option>
-                    <option value="Finnish">Finnish</option>
-                    <option value="French">French</option>
-                    <option value="Georgian">Georgian</option>
-                    <option value="German">German</option>
-                    <option value="Greek">Greek</option>
-                    <option value="Gujarati">Gujarati</option>
-                    <option value="Hebrew">Hebrew</option>
-                    <option value="Hindi">Hindi</option>
-                    <option value="Hungarian">Hungarian</option>
-                    <option value="Icelandic">Icelandic</option>
-                    <option value="Indonesian">Indonesian</option>
-                    <option value="Irish">Irish</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Javanese">Javanese</option>
-                    <option value="Korean">Korean</option>
-                    <option value="Latin">Latin</option>
-                    <option value="Latvian">Latvian</option>
-                    <option value="Lithuanian">Lithuanian</option>
-                    <option value="Macedonian">Macedonian</option>
-                    <option value="Malay">Malay</option>
-                    <option value="Malayalam">Malayalam</option>
-                    <option value="Maltese">Maltese</option>
-                    <option value="Maori">Maori</option>
-                    <option value="Marathi">Marathi</option>
-                    <option value="Mongolian">Mongolian</option>
-                    <option value="Nepali">Nepali</option>
-                    <option value="Norwegian">Norwegian</option>
-                    <option value="Persian">Persian</option>
-                    <option value="Polish">Polish</option>
-                    <option value="Portuguese">Portuguese</option>
-                    <option value="Punjabi">Punjabi</option>
-                    <option value="Quechua">Quechua</option>
-                    <option value="Romanian">Romanian</option>
-                    <option value="Russian">Russian</option>
-                    <option value="Samoan">Samoan</option>
+                    <option value="الإنجليزية">الإنجليزية</option>
+                    <option value="العربية">العربية</option>
+                    <option value="الفرنسية">الفرنسية</option>
+                    <option value="الإسبانية">الإسبانية</option>
+                    <option value="الألمانية">الألمانية</option>
+                    <option value="الإيطالية">الإيطالية</option>
+                    <option value="الهندية">الهندية</option>
+                    <option value="الروسية">الروسية</option>
+                    <option value="البرتغالية">البرتغالية</option>
+                    <option value="التركية">التركية</option>
+                    <option value="النرويجية">النرويجية</option>
+                    <option value="الدانماركية">الدانماركية</option>
+                    <option value="اليابانية">اليابانية</option>
+                    <option value="الكورية">الكورية</option>
+                    <option value="الصينية">الصينية</option>
                 </select>
             </div>
             <div class="form-group">
@@ -461,33 +432,45 @@
                 <input type="text" name="youtube_link" class="metro-input">
             </div>
             <div class="form-group">
+                <label>Class</label>
+                <select name="class_serie" data-role="select">
+                    <option value="مسلسلات أجنبية">مسلسلات أجنبية</option>
+                    <option value="مسلسلات تركية">مسلسلات تركية</option>
+                    <option value="مسلسلات أسيوية">مسلسلات أسيوية</option>
+                    <option value="مسلسلات هندية">مسلسلات هندية</option>
+                    <option value="مسلسلات عربية">مسلسلات عربية</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label>Producteur </label>
-                <input type="text" name="name_producer" style="width: 250px;">
-                <input type="file" name="photo_productor" data-role="file" style="width: 277px; left: 263px;top: -2.29rem;">
+                <input type="text" name="name_producer" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 1</label>
-                <input type="text" name="name_actor1" style="width: 250px;">
+                <input type="text" name="name_actor1" class="metro-input">
                 <label>real name Actor 1</label>
-                <input type="text" name="real_name_actor1" style="width: 250px;">
-                <input type="file" name="photo_actor1" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor1" class="metro-input">
+                <label>image Actor 1</label>
+                <input type="text" name="photo_actor1"  class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 2</label>
-                <input type="text" name="name_actor2" style="width: 250px;">
+                <input type="text" name="name_actor2" class="metro-input">
                 <label>real name Actor 2</label>
-                <input type="text" name="real_name_actor2" style="width: 250px;">
-                <input type="file" name="photo_actor2" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor2" class="metro-input">
+                <label>image Actor 2</label>
+                <input type="text" name="photo_actor2" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 3</label>
-                <input type="text" name="name_actor3" style="width: 250px;">
+                <input type="text" name="name_actor3" class="metro-input">
                 <label>real name Actor 3</label>
-                <input type="text" name="real_name_actor3" style="width: 250px;">
-                <input type="file" name="photo_actor3" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor3" class="metro-input">
+                <label>image Actor 3</label>
+                <input type="text" name="photo_actor3"  class="metro-input">
             </div>
 
-            <button type="submit" class="button mif-download primary large rounded">  Add This Movie</button>
+            <button type="submit" class="button mif-download primary large rounded">Add Serie</button>
         </div>
     </form>
 @stop

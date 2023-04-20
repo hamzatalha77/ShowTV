@@ -1,0 +1,709 @@
+html {
+    font-family: "Lemonada", cursive;
+}
+section {
+    position: relative;
+    margin-top: 13px;
+    padding: 10px;
+}
+
+.infos {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    width: 100%;
+    top: -28px;
+    height: 275px;
+    padding: 10px;
+}
+.part1 {
+    /* float: left; */
+    position: relative;
+    height: 20%;
+    top: -7rem;
+}
+
+.movie_image {
+    position: relative;
+    top: 9rem;
+    left: 5rem;
+}
+
+.movie_image img {
+    border: 1px solid #fec107;
+    border-radius: 4px;
+    padding: 5px;
+    width: 178px;
+    position: relative;
+    top: -2rem;
+}
+
+.part2 {
+    float: right;
+    text-align: right;
+    /* position: relative; */
+    height: 20%;
+    top: 2rem;
+}
+.cat {
+    display: flex;
+}
+.cra {
+    display: flex;
+}
+.date {
+    display: flex;
+}
+.imdb {
+    display: flex;
+}
+.dura {
+    display: flex;
+}
+.qua {
+    display: flex;
+}
+.lan {
+    margin-bottom: 1em;
+}
+.con {
+    margin-bottom: 1em;
+}
+.sto {
+    margin-bottom: 1em;
+}
+.cat h4 {
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+
+.cra h4 {
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+.eng {
+    position: relative;
+    left: 27rem;
+    /* top: -4rem; */
+    bottom: 18rem;
+}
+
+span {
+    color: #fec107;
+    font-family: "Lemonada", cursive;
+}
+
+.eng h1 {
+    color: #fec107;
+    font-size: 3rem;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.arb h4 {
+    display: unset;
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
+    display: flex;
+}
+.arb {
+    /* position: relative; */
+    /* bottom: -6rem; */
+    width: 36%;
+    /* top: 12rem; */
+    float: right;
+    /* right: -20rem; */
+}
+.adb {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    top: 1em;
+}
+.adb p {
+    text-align-last: center;
+    font-family: "Lemonada", cursive;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    .infos {
+        height: 770px;
+    }
+
+    .eng {
+        left: 0rem;
+        top: 9rem;
+    }
+
+    .part2 {
+        margin-top: 42rem;
+        /* top: 33rem; */
+        /* left: -18rem; */
+    }
+
+    .arb {
+        width: 95%;
+    }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+    .infos {
+        height: 526px;
+    }
+    .part2 {
+        margin-top: 20rem;
+        /* top: 22rem; */
+        /* right: 77rem; */
+    }
+    .arb {
+        width: 65%;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1580px) {
+}
+
+.adb {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    position: relative;
+    padding: 10px;
+    top: -23px;
+}
+.adb p {
+    text-align-last: center;
+    font-family: "Lemonada", cursive;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column-reverse;
+    margin-top: -13px;
+}
+
+.content > .actors {
+    max-width: fit-content;
+    flex: 1;
+    top: 4rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+.content > .main {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.actor {
+    padding: 10px;
+}
+.actor-info {
+    display: inline-flex;
+    width: 108%;
+}
+.actor-info img {
+    width: 100px;
+    height: 100px;
+}
+.actor-name {
+    padding-left: 14px;
+    padding-top: 13px;
+}
+.actor-name h2 {
+    font-family: "Lemonada", cursive;
+    color: #fff;
+    font-size: 12px;
+}
+.actor-name span h2 {
+    font-family: "Lemonada", cursive;
+    color: #fec107;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.main {
+    margin: 0 auto;
+    width: 97rem;
+    position: relative;
+    /* margin: 100px auto; */
+    /* padding-top: 14px; */
+    margin-top: -5px;
+}
+
+.part {
+    position: relative;
+    padding: 18px;
+    width: 100px;
+}
+.part h6 {
+    text-align-last: center;
+    margin-left: -10rem;
+    font-size: 19px;
+    font-family: "Lemonada", cursive;
+}
+.part img {
+    padding: 5px;
+    width: 150px;
+}
+@media only screen and (max-width: 1500px) {
+    .content > .actors {
+        display: flex;
+        top: 44rem;
+        place-self: center;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fec107;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fec107;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .content > .actors {
+        left: -19rem;
+        text-align-last: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .actor-info {
+        width: 105%;
+        display: block;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .content > .actors {
+        display: block;
+        top: 50rem;
+        left: -29rem;
+    }
+}
+
+.themoviename {
+    display: flex;
+}
+html {
+    font-family: "Lemonada", cursive;
+}
+section {
+    position: relative;
+    margin-top: 13px;
+    padding: 10px;
+}
+
+.infos {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    width: 100%;
+    top: -28px;
+    height: 275px;
+    padding: 10px;
+}
+.part1 {
+    /* float: left; */
+    position: relative;
+    height: 20%;
+    top: -7rem;
+}
+
+.movie_image {
+    position: relative;
+    top: 9rem;
+    left: 5rem;
+}
+
+.movie_image img {
+    border: 1px solid #fec107;
+    border-radius: 4px;
+    padding: 5px;
+    width: 178px;
+    position: relative;
+    top: -2rem;
+}
+
+.part2 {
+    float: right;
+    text-align: right;
+    /* position: relative; */
+    height: 20%;
+    top: 2rem;
+}
+.cat {
+    display: flex;
+}
+.cra {
+    display: flex;
+}
+.date {
+    display: flex;
+}
+.imdb {
+    display: flex;
+}
+.dura {
+    display: flex;
+}
+.qua {
+    display: flex;
+}
+.lan {
+    margin-bottom: 1em;
+}
+.con {
+    margin-bottom: 1em;
+}
+.sto {
+    margin-bottom: 1em;
+}
+.cat h4 {
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+
+.cra h4 {
+    margin: 0px;
+    margin-left: 17px;
+    padding-bottom: 1rem;
+}
+.eng {
+    position: relative;
+    left: 27rem;
+    /* top: -4rem; */
+    bottom: 18rem;
+}
+
+span {
+    color: #fec107;
+    font-family: "Lemonada", cursive;
+}
+
+.eng h1 {
+    color: #fec107;
+    font-size: 3rem;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.arb h4 {
+    display: unset;
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
+    display: flex;
+}
+.arb {
+    /* position: relative; */
+    /* bottom: -6rem; */
+    width: 36%;
+    /* top: 12rem; */
+    float: right;
+    /* right: -20rem; */
+}
+.adb {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    top: 1em;
+}
+.adb p {
+    text-align-last: center;
+    font-family: "Lemonada", cursive;
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    .infos {
+        height: 770px;
+    }
+
+    .eng {
+        left: 0rem;
+        top: 9rem;
+    }
+
+    .part2 {
+        margin-top: 42rem;
+        /* top: 33rem; */
+        /* left: -18rem; */
+    }
+
+    .arb {
+        width: 95%;
+    }
+}
+@media (min-width: 601px) and (max-width: 1000px) {
+    .infos {
+        height: 526px;
+    }
+    .part2 {
+        margin-top: 20rem;
+        /* top: 22rem; */
+        /* right: 77rem; */
+    }
+    .arb {
+        width: 65%;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1580px) {
+}
+
+.adb {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 60px;
+    position: relative;
+    padding: 10px;
+    top: -23px;
+}
+.adb p {
+    text-align-last: center;
+    font-family: "Lemonada", cursive;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column-reverse;
+    margin-top: -13px;
+}
+
+.content > .actors {
+    max-width: fit-content;
+    flex: 1;
+    top: 4rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+.content > .main {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.actor {
+    padding: 10px;
+}
+.actor-info {
+    display: inline-flex;
+    width: 108%;
+}
+.actor-info img {
+    width: 100px;
+    height: 100px;
+}
+.actor-name {
+    padding-left: 14px;
+    padding-top: 13px;
+}
+.actor-name h2 {
+    font-family: "Lemonada", cursive;
+    color: #fff;
+    font-size: 12px;
+}
+.actor-name span h2 {
+    font-family: "Lemonada", cursive;
+    color: #fec107;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.main {
+    margin: 0 auto;
+    width: 97rem;
+    position: relative;
+    /* margin: 100px auto; */
+    /* padding-top: 14px; */
+    margin-top: -5px;
+}
+
+.part {
+    position: relative;
+    padding: 18px;
+    width: 100px;
+}
+.part h6 {
+    text-align-last: center;
+    margin-left: -10rem;
+    font-size: 19px;
+    font-family: "Lemonada", cursive;
+}
+.part img {
+    padding: 5px;
+    width: 150px;
+}
+@media only screen and (max-width: 1500px) {
+    .content > .actors {
+        display: flex;
+        top: 44rem;
+        place-self: center;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fec107;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fec107;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .content > .actors {
+        left: -19rem;
+        text-align-last: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .actor-info {
+        width: 105%;
+        display: block;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .content > .actors {
+        display: block;
+        top: 50rem;
+        left: -29rem;
+    }
+}
+
+.themoviename {
+    display: flex;
+}
+.video-overlay {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: all ease 500ms;
+}
+
+.video-overlay.open {
+    position: fixed;
+    z-index: 1000;
+    opacity: 1;
+}
+
+.video-overlay-close {
+    position: absolute;
+    z-index: 1000;
+    top: 15px;
+    right: 20px;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+    color: #fa183d;
+}
+
+.video-overlay iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* width: 90%; */
+    /* height: auto; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
+.button {
+    background-color: #fec107; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin-top: -3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.m2 {
+    margin-right: 0.5rem !important;
+}
+button span {
+    color: white;
+    padding-left: 10px;
+    font-size: 11px; /* margin-top: 5px; */ /* padding-top: 13px; */ /* line-height: 13px; */
+}
+@media screen and (max-width: 500px) {
+    .actors {
+        display: table;
+        position: relative;
+        margin: 0px auto;
+    }
+}
+
+.themoviename {
+    display: flex;
+}
+.carousel {
+    position: relative;
+    width: 1200px;
+    margin: -13px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-item {
+    width: 4140px;
+    margin-left: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+.seasons {
+    color: white;
+}

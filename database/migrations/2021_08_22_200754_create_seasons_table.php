@@ -22,7 +22,7 @@ class CreateSeasonsTable extends Migration
             $table->string('photo_season')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('number')->nullable();
-            $table->string('imdb_season')->nullable();
+            $table->string('views')->nullable();
             $table->string('user_name')->nullable();
             $table->timestamps();
             $table->foreign('serie_id')->references('id')->on('series')->onUpdate('cascade')->onDelete('cascade');

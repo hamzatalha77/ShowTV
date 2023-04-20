@@ -24,14 +24,22 @@
                 <input type="text" name="serie_name" value="{{ $serie->serie_name }}" class="metro-input">
             </div>
             <div class="form-group">
+                <label>Serie Image</label>
+                <input type="text" name="serie_photo" value="{{ $serie->serie_photo }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Serie poster</label>
+                <input type="text" name="image_poster_serie" value="{{ $serie->image_poster_serie }}" class="metro-input">
+            </div>
+            <div class="form-group">
                 <label>Tags</label>
                 <input type="text" name="tags" value="{{ $serie->tags }}" data-role="taginput"  class="mt-4" data-random-color="true">
             </div>
         <div class="form-group">
-            <strong>Country:</strong>
+            <strong>Genres:</strong>
             <select name="genres_id[]" class="form-control custom-select" data-role="select" multiple>
                 @foreach($genres as $genre)
-                    <option value="{{$genre->id }}"}} @if($serie->Genres->containsStrict('id', $genre->id)) selected="selected" @endif>
+                    <option value="{{$genre->id }}" @if($serie->Genres->containsStrict('id', $genre->id)) selected="selected" @endif>
                         {{ $genre->genre }}
                     </option>
                 @endforeach
@@ -407,41 +415,63 @@
                 <input type="text" name="youtube_link" value="{{ $serie->youtube_link }}" class="metro-input">
             </div>
             <div class="form-group">
-                <label>Producteur </label>
-                <input type="text" name="name_producer" value="{{ $serie->name_producer }}" style="width: 250px;">
-                <input type="file" name="photo_productor" data-role="file" style="width: 277px; left: 263px;top: -2.29rem;">
+                <label>Class</label>
+                <select name="class_serie" data-role="select">
+                    <option value="مسلسلات أجنبية"{{($serie->class_serie === 'مسلسلات أجنبية') ? 'Selected' : ''}}>مسلسلات أجنبية</option>
+                    <option value="مسلسلات تركية"{{($serie->class_serie === 'مسلسلات تركية') ? 'Selected' : ''}}>مسلسلات تركية</option>
+                    <option value="مسلسلات أسيوية"{{($serie->class_serie === 'مسلسلات أسيوية') ? 'Selected' : ''}}>مسلسلات أسيوية</option>
+                    <option value="مسلسلات هندية"{{($serie->class_serie === 'مسلسلات هندية') ? 'Selected' : ''}}>مسلسلات هندية</option>
+                    <option value="مسلسلات عربية"{{($serie->class_serie === 'مسلسلات عربية') ? 'Selected' : ''}}>مسلسلات عربية</option>
+                </select>
             </div>
-
+            <div class="form-group">
+                <label>Producteur </label>
+                <input type="text" name="name_producer" value="{{ $serie->name_producer }}"  class="metro-input">
+            </div>
             <div class="form-group">
                 <label>Actor 1</label>
-                <input type="text" name="name_actor1" value="{{ $serie->name_actor1 }}" style="width: 250px;">
+                <input type="text" name="name_actor1" value="{{ $serie->name_actor1 }}" class="metro-input">
                 <label>real name Actor 1</label>
-                <input type="text" name="real_name_actor1" value="{{ $serie->real_name_actor1 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor1"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor1" value="{{ $serie->real_name_actor1 }}" class="metro-input">
+                <label>image Actor 1</label>
+                <input type="text" name="photo_actor1" value="{{ $serie->photo_actor1 }}"  class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 2</label>
-                <input type="text" name="name_actor2" value="{{ $serie->name_actor2 }}" style="width: 250px;">
+                <input type="text" name="name_actor2" value="{{ $serie->name_actor2 }}" class="metro-input">
                 <label>real name Actor 2</label>
-                <input type="text" name="real_name_actor2" value="{{ $serie->real_name_actor2 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor2"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor2" value="{{ $serie->real_name_actor2 }}" class="metro-input">
+                <label>image Actor 2</label>
+                <input type="text" name="photo_actor2" value="{{ $serie->photo_actor2 }}" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 3</label>
-                <input type="text" name="name_actor3" value="{{ $serie->name_actor3 }}" style="width: 250px;">
+                <input type="text" name="name_actor3" value="{{ $serie->name_actor3 }}" class="metro-input">
                 <label>real name Actor 3</label>
-                <input type="text" name="real_name_actor3" value="{{ $serie->real_name_actor3 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor3"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor3" value="{{ $serie->real_name_actor3 }}" class="metro-input">
+                <label>image Actor 3</label>
+                <input type="text" name="photo_actor3" value="{{ $serie->photo_actor3 }}"  class="metro-input">
             </div>
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit">Edit Serie</button>
         <div class="image-upload-one">
             <div class="center">
               <div class="form-input">
                 <label for="file-ip-1">
-                  <img id="file-ip-1-preview" src="{{ asset('image1/' .$serie->serie_photo) }}">
+                  <img id="file-ip-1-preview" src="{{ $serie->serie_photo }}">
                   <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button>
                 </label>
                 <input type="file"  name="serie_photo" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);" hidden>
+              </div>
+            </div>
+          </div>
+        <div class="image-upload-one">
+            <div class="center">
+              <div class="form-input">
+                <label for="file-ip-1">
+                  <img id="file-ip-1-preview" src="{{ $serie->image_poster_serie }}">
+                  <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button>
+                </label>
+                <input type="file"  name="image_poster_serie" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);" hidden>
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/images/favLogo.png" type="image/x-icon"/>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,27 +18,29 @@
     <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/css/episodes.css">
     <link rel="stylesheet" href="/css/nox.css">
-    <title>Document</title>
+    <title>Telfazy | {{ $season->season_name}} {{ $season->serie->serie_name }} مسلسل </title>
 </head>
 <body>
-    @include('telfazy.navbar2')
-
+    @include('telfazy.loading')
+    @include('telfazy.navbar3')
     <section>
 
         <div class="infos">
 
             <div class="part1">
                 <div class="movie_image">
-                     <img src="{{ asset('image1/'.$season->photo_season) }}" alt="">
+                    <img src="{{$season->photo_season }}" alt="">
                 </div>
-                <div class="eng">
-                    <h1>{{$season->season_name}}</h1>
 
-                    <div class="cat">
-                      <span>Category : @foreach($season->serie->genres as $genre)
-                        </span><h4>{{ $genre->genre }}</h4>
-                       @endforeach
-                    </div>
+                <div class="eng">
+                    <div class="themoviename">
+                    <h1>{{ $season->serie->serie_name }}</h1>
+                </div>
+                <div class="cat">
+                    <span>Category : @foreach($season->serie->genres as $genre)
+                      </span><h4>{{ $genre->genre }}</h4>
+                     @endforeach
+                  </div>
 
                     <div class="cra">
                         <span>Creator : </span><h4> {{ $season->serie->name_producer }}</h4>
@@ -52,8 +55,6 @@
                     <div class="imdb">
                         <span>IMDB :</span><h4> {{ $season->serie->imdb }}</h4>
                     </div>
-
-
                 </div>
 
             </div>
@@ -65,7 +66,7 @@
                     <span>اللغة :</span><h4> {{ $season->serie->language }}</h4>
                     </div>
                     <div class="con">
-                        <span>الدولة :</span><h4> {{ $season->serie->country }} </h4>
+                        <span>الدولة :</span><h4>  {{ $season->serie->country }}  </h4>
                     </div>
                     <div class="sto">
                     <span> القصة :</span><h4> {{ $season->serie->description }}</h4>
@@ -75,124 +76,84 @@
 
         </div>
 
-
-
 <div class="adb">
-   <span><p>{{ $season->serie->serie_name }}</p></span>
+    <p>Adblock إذا لم يظهر سيرفر المشاهدة الرجاء أغلق</p>
 </div>
 <div class="adb1">
-    <p> {{$season->season_name}} </p>
-</div>
-<div id="Seasons">
+    <label class="titles"> {{ $season->season_name}}  {{ $season->serie->serie_name }}</label>
+        <div class="main">
 
-    <ul>
-       <li class="Uls"><label>▾ المواسم  </label>
-          <ul>
-            @foreach ($seasons as $season)
-             <li><a href="{{ route('showepisodetelfazy', $season->id) }}">{{$season->season_name}}</a></li>
-             @endforeach
-
-          </ul>
-       </li>
-    </ul>
- </div>
-<div class="second-section">
+                    <input type="checkbox" id="drop-1" hidden>
 
 
-<div class="big-div">
 
-    <div class="div1">
+                    <label class="dropHeader dropHeader-1" for="drop-1">▼ المواسم</label>
+                    <div class="list list-1">
+                        @foreach ($seasons as $season)
+                    <div class="item"><a href="{{ route('showepisodetelfazy', $season->id) }}">{{$season->season_name}}</a></div>
+                    @endforeach
 
-        <img src="{{ asset('image3/' .$season->serie->photo_actor1) }}" alt="">
-        <div class="actors">
-
-        <h5>{{ $season->serie->name_actor1 }}</h5>
-        <h5><span>{{ $season->serie->real_name_actor1 }}</span></h5>
+                    </div>
+                </div>
         </div>
 
+    <div class="watching">
+        <div class="streaming">
+            <div class="boxx1">
+                @foreach ($episodes as $episode)
+                <a href="{{ route('myepisode', $episode->id) }}">{{ $episode->episode_name }}</a>
+                @endforeach
+            </div>
+            <div class="boxx2">
+                <div class="my-watch">
 
-    </div>
+                        <iframe src="//www.youtube.com/embed/jZutzZ1OCUc"width="100%" height="460" frameborder="0" scrolling="auto" title="La Casa De Papel   Parte 5 Vol. 1   Tráiler Oficial   Netflix" style="position:absolute;" allowfullscreen></iframe>
 
-    <div class="div2">
+            </div>
+            </div>
 
-        <img src="{{ asset('image4/' .$season->serie->photo_actor2) }}" alt="">
 
-          <div class="actors">
 
-        <h5>{{ $season->serie->name_actor2 }}</h5>
-        <h5><span>{{ $season->serie->real_name_actor2 }}</span></h5>
+            <div class="boxx3">
+                <div class="actors">
+                    <div class="actor">
+                        <div class="actor-info">
+                            <img src="{{ $season->serie->photo_actor1 }}" alt="">
+                            <div class="actor-name">
+                                <span><h2>{{ $season->serie->name_actor1 }}</h2></span>
+                             <h2>{{ $season->serie->real_name_actor1 }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actor">
+                        <div class="actor-info">
+                            <img src="{{ $season->serie->photo_actor2 }}" alt="">
+                            <div class="actor-name">
+                            <span><h2>{{ $season->serie->name_actor2 }}</h2></span>
+                             <h2>{{ $season->serie->real_name_actor2 }}</h2>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="actor">
+                        <div class="actor-info">
+                            <img src="{{ $season->serie->photo_actor3 }}" alt="">
+                            <div class="actor-name">
+                                <span><h2>{{ $season->serie->name_actor3 }}</h2></span>
+                             <h2>{{ $season->serie->real_name_actor3 }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
-    <div class="div3">
-
-        <img src="{{ asset('image5/' .$season->serie->photo_actor3) }}" alt="">
-        <div class="actors">
-
-        <h5>{{ $season->serie->name_actor3 }}</h5>
-        <h5><span>{{ $season->serie->real_name_actor3 }}</span></h5>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="videos">
-
-
-    <iframe width="1220" height="440" src="https://www.youtube.com/embed/qehr5WUfJUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</div>
-{{-- <div class="main">
-    <div class="slider slider-nav">
-@foreach ($seasons as $season)
-<div class="part"> <h6>{{$season->season_name}}</h6><a href="{{ route('showepisodetelfazy', $season->id) }}"><img src="{{ asset('image1/' .$season->photo_season) }}" alt=""></a></div>
-@endforeach
-    </div>
-  </div> --}}
-
-
-
-
-
-  <div class="vertical-menu">
-
-    @foreach ($episodes as $episode)
-    <a href="{{ route('myepisode', $episode->id) }}">{{ $episode->episode_name }}</a>
-    @endforeach
-
-  </div>
     </section>
-
-
     @include('telfazy/footer')
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
-<script>
-
-$('.slider-for').slick({
-slidesToShow: 1,
-slidesToScroll: 1,
-arrows: false,
-fade: true,
-asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-slidesToShow: 3,
-slidesToScroll: 1,
-asNavFor: '.slider-for',
-dots: true,
-centerMode: true,
-focusOnSelect: true
-});
-</script>
+<script src="/js/loading.js"></script>
 </body>
 </html>
 

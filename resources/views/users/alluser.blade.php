@@ -1,6 +1,3 @@
-{{-- @php
-    $roles = App\Models\Role::get();
-@endphp --}}
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -56,10 +53,10 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
     <style>
         img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
 }
 
 img:hover {

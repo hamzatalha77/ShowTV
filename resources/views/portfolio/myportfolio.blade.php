@@ -1,6 +1,4 @@
 @extends('adminlte::page')
-
-@section('title', 'Dashboard')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">

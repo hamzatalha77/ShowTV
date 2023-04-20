@@ -18,7 +18,6 @@
         <th>Serie Genres</th>
         <th>Season Name</th>
         <th>Season Number</th>
-        <th>IMDB Season</th>
         <th>User Name</th>
         <th>Visible</th>
          <th>Action</th>
@@ -30,7 +29,7 @@
 
         @foreach ($seasons as $season)
         <td>{{$season->id}}</td>
-         <td> <img src="{{ asset('image1/' .$season->photo_season) }}" alt="" style="width:90px"></td>
+         <td> <img src="{{ $season->photo_season }}" alt="" style="width:90px"></td>
             <td>{{$serie->serie_name}}</td>
                 <td>
                     @forelse($serie->genres as $genre)
@@ -41,7 +40,6 @@
                 </td>
             <td>{{$season->season_name}}</td>
             <td>{{$season->number}}</td>
-            <td>{{$season->imdb_season}}</td>
             <td>{{$season->user_name}}</td>
             <td>
                 <label class="switch">
@@ -53,7 +51,7 @@
                 <form action="{{ route('destroy1',$season->id) }}" method="POST">
                     <a class="btn btn-success" href="{{ route('addepisodes', $season->id) }}">Add Episode</a>
                     <a class="btn btn-primary" href="{{ route('showepisodes', $season->id) }}">Show Episodes</a>
-                    <a class="btn btn-info" href="{{ route('details', $serie->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('showepisodetelfazy', $serie->id) }}">Show</a>
                     <a class="btn btn-warning" href="{{ route('editseason', $season->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
@@ -154,14 +152,19 @@
     })
 </script>
 <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+@if(Session::has('seasonadded'))
+    <script>
+        swal("Good job!", "New Season Has Been Added!!", "success");
+    </script>
+@endif
 @if(Session::has('seasondeleted'))
     <script>
-        swal("Good job!", "User Has Been Deleted!!", "success");
+        swal("Good job!", "Season Has Been Deleted!!", "success");
     </script>
 @endif
 @if(Session::has('seasonupdated'))
     <script>
-        swal("Good job!", "New User Has Been Updated Successfully!!", "success");
+        swal("Good job!", "Season Has Been Updated Successfully!!", "success");
     </script>
 @endif
 @stop

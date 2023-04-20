@@ -1,7 +1,3 @@
-@php
-    $series = App\Models\Serie::get();
-    $seasons = App\Models\Season::get();
-@endphp
 @extends('adminlte::page')
 
 @section('title', 'Dashboard')
@@ -11,16 +7,23 @@
 @stop
 
 @section('content')
+@if($series[0]->special==true)
+<a href="{{ route('disabelserie') }}"> Disable Special Server</a>
+    @else
+    <a href="{{ route('enableserie') }}"> Enable Special Server</a>
+@endif
 <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
     <tr>
         <th>#</th>
         <th>Serie Image</th>
+        <th>Serie Poster</th>
         <th>Serie Name</th>
         <th>Genres</th>
         <th>User Name</th>
         <th>IMDB</th>
         <th>Visible</th>
+        <th>Top</th>
         <th>Action</th>
 
     </tr>
@@ -29,7 +32,8 @@
     <tr>
         @foreach ($series as $serie)
         <td>{{$serie->id}}</td>
-         <td> <img src="{{ asset('image1/' .$serie->serie_photo) }}" alt="" style="width:90px"></td>
+         <td> <img src="{{ $serie->serie_photo }}" alt="" style="width:90px"></td>
+         <td> <img src="{{ $serie->image_poster_serie }}" alt="" style="width:90px"></td>
             <td>{{$serie->serie_name}}</td>
                             <td>
                     @forelse($serie->genres as $genre)
@@ -47,12 +51,18 @@
                 </label>
             </td>
             <td>
+                <label class="switch">
+                <input data-id="{{$serie->id}}" class="top-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $serie->top ? 'checked' : '' }}>
+                <span class="slider round"></span>
+                </label>
+            </td>
+            <td>
                 <form action="{{ route('series.destroy',$serie->id) }}" method="POST">
                     <a class="btn btn-success" href="{{ route('addseason', $serie->id) }}">Add Season</a>
 
                     {{-- <a class="btn btn-primary" href="{{ route('showseasons', $serie->id) }}">Show Seasons</a> --}}
                     <a class="btn btn-primary" href="{{ route('showseasons', $serie->id) }}">Show Seasons</a>
-                    <a class="btn btn-info" href="{{ route('details', $serie->id) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('showserie', $serie->id) }}">Show</a>
                     <a class="btn btn-warning" href="{{ route('editserie', $serie->id) }}">Edit</a>
                     @csrf
                     @method('DELETE')
@@ -155,6 +165,24 @@
     })
 </script>
 <script>
+    $(function() {
+        $('.top-class').change(function() {
+            var top = $(this).prop('checked') == true ? 1 : 0;
+            var serie_id = $(this).data('id');
+
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: '/changeTopSerie',
+                data: {'top': top, 'serie_id': serie_id},
+                success: function(data){
+                    console.log(data.success)
+                }
+            });
+        })
+    })
+</script>
+<script>
     $(document).ready(function() {
     $('#example').DataTable();
 } );
@@ -163,14 +191,19 @@
 <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+@if(Session::has('serieadded'))
+    <script>
+        swal("Good job!", "New Serie Has Been Added!!", "success");
+    </script>
+@endif
 @if(Session::has('seriedeleted'))
     <script>
-        swal("Good job!", "User Has Been Deleted!!", "success");
+        swal("Good job!", "Serie Has Been Deleted!!", "success");
     </script>
 @endif
 @if(Session::has('serieupdated'))
     <script>
-        swal("Good job!", "New User Has Been Updated Successfully!!", "success");
+        swal("Good job!", "Serie Has Been Updated Successfully!!", "success");
     </script>
 @endif
 @stop

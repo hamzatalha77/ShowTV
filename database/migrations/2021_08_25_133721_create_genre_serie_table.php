@@ -14,8 +14,8 @@ class CreateGenreSerieTable extends Migration
     public function up()
     {
         Schema::create('genre_serie', function (Blueprint $table) {
-            $table->unsignedBigInteger('genre_id');
-            $table->unsignedBigInteger('serie_id');
+            $table->integer('genre_id')->unsigned();
+            $table->integer('serie_id')->unsigned();
             $table->foreign('genre_id')->references('id')->on('genres')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('serie_id')->references('id')->on('series')->onUpdate('cascade')->onDelete('cascade');
         });

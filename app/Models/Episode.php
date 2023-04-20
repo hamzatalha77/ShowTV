@@ -36,7 +36,7 @@ class Episode extends Model
     {
         if (static::whereSlug($slug = Str::slug($episode_name))->exists()) {
 
-            $max = static::whereName($episode_name)->latest('id')->skip(1)->value('slug');
+            $max = static::whereEpisode_name($episode_name)->latest('id')->skip(1)->value('slug');
 
             if (isset($max[-1]) && is_numeric($max[-1])) {
 

@@ -57,7 +57,16 @@ class MovieController extends Controller
         $movie->class = $request->input('class');
         $movie->language = $request->input('language');
         $movie->translation = $request->input('translation');
-        $movie->movie_link = $request->input('movie_link');
+        $movie->views = $request->input('views');
+        $movie->server_1 = $request->input('server_1');
+        $movie->server_2 = $request->input('server_2');
+        $movie->server_3 = $request->input('server_3');
+        $movie->server_4 = $request->input('server_4');
+        $movie->server_5 = $request->input('server_5');
+        $movie->server_6 = $request->input('server_6');
+        $movie->download_link_1 = $request->input('download_link_1');
+        $movie->download_link_2 = $request->input('download_link_2');
+        $movie->download_link_3 = $request->input('download_link_3');
         $movie->youtube_link = $request->input('youtube_link');
         $movie->date_release = $request->input('date_release');
         $movie->name_producer = $request->input('name_producer');
@@ -68,46 +77,15 @@ class MovieController extends Controller
         $movie->real_name_actor2 = $request->input('real_name_actor2');
         $movie->real_name_actor3 = $request->input('real_name_actor3');
         $movie->user_name = $request->input('user_name');
-
-        if($request->hasfile('image_movie')){
-            $file = $request->file('image_movie');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $movie->image_movie = $filename;
-        }
-        if($request->hasfile('photo_productor')){
-            $file = $request->file('photo_productor');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image2', $filename);
-            $movie->photo_productor = $filename;
-        }
-        if($request->hasfile('photo_actor1')){
-            $file = $request->file('photo_actor1');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image3', $filename);
-            $movie->photo_actor1 = $filename;
-        }
-        if($request->hasfile('photo_actor2')){
-            $file = $request->file('photo_actor2');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image4', $filename);
-            $movie->photo_actor2 = $filename;
-        }
-        if($request->hasfile('photo_actor3')){
-            $file = $request->file('photo_actor3');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image5', $filename);
-            $movie->photo_actor3 = $filename;
-        }
-
+        $movie->image_movie = $request->input('image_movie');
+        $movie->photo_actor1 = $request->input('photo_actor1');
+        $movie->photo_actor2 = $request->input('photo_actor2');
+        $movie->photo_actor3 = $request->input('photo_actor3');
+        $movie->image_poster_movie = $request->input('image_poster_movie');
         $movie->save();
         $movie->categories()->attach($request->categories_id);
-        return redirect()->back()->with('success', 'your message,here');
+        Session::flash('movieadd');
+        return redirect()->route('movies.index');
     }
 
     /**
@@ -126,7 +104,18 @@ class MovieController extends Controller
 
 
 
+    public function disabel()
+    {
+        $movies = DB::select("UPDATE movies SET `special`=0");
 
+        return redirect(route('movies.index'));
+    }
+
+    public function enable()
+    {
+        $movies = DB::select("UPDATE movies SET `special`=1");
+        return redirect(route('movies.index'));
+    }
 
 
 
@@ -181,7 +170,15 @@ class MovieController extends Controller
         $movie->class = $request->input('class');
         $movie->language = $request->input('language');
         $movie->translation = $request->input('translation');
-        $movie->movie_link = $request->input('movie_link');
+        $movie->server_1 = $request->input('server_1');
+        $movie->server_2 = $request->input('server_2');
+        $movie->server_3 = $request->input('server_3');
+        $movie->server_4 = $request->input('server_4');
+        $movie->server_5 = $request->input('server_5');
+        $movie->server_6 = $request->input('server_6');
+        $movie->download_link_1 = $request->input('download_link_1');
+        $movie->download_link_2 = $request->input('download_link_2');
+        $movie->download_link_3 = $request->input('download_link_3');
         $movie->youtube_link = $request->input('youtube_link');
         $movie->date_release = $request->input('date_release');
         $movie->name_producer = $request->input('name_producer');
@@ -191,74 +188,15 @@ class MovieController extends Controller
         $movie->name_actor1 = $request->input('name_actor1');
         $movie->name_actor2 = $request->input('name_actor2');
         $movie->name_actor3 = $request->input('name_actor3');
-
-        if($request->hasfile('image_movie')){
-            $destination = 'image1'.$movie->image_movie;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('image_movie');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image1', $filename);
-            $movie->image_movie = $filename;
-        }
-
-        if($request->hasfile('photo_productor')){
-            $destination = 'image2'.$movie->photo_productor;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_productor');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image2', $filename);
-            $movie->photo_productor = $filename;
-        }
-
-        if($request->hasfile('photo_actor1')){
-            $destination = 'image3'.$movie->photo_actor1;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor1');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image3', $filename);
-            $movie->photo_actor1 = $filename;
-        }
-
-        if($request->hasfile('photo_actor2')){
-            $destination = 'image4'.$movie->photo_actor2;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor2');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image4', $filename);
-            $movie->photo_actor2 = $filename;
-        }
-
-        if($request->hasfile('photo_actor3')){
-            $destination = 'image5'.$movie->photo_actor3;
-            if(File::exists($destination)){
-
-                File::delete($destination);
-            }
-            $file = $request->file('photo_actor3');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('image5', $filename);
-            $movie->photo_actor3 = $filename;
-        }
+        $movie->image_movie = $request->input('image_movie');
+        $movie->photo_actor1 = $request->input('photo_actor1');
+        $movie->photo_actor2 = $request->input('photo_actor2');
+        $movie->photo_actor3 = $request->input('photo_actor3');
+        $movie->image_poster_movie = $request->input('image_poster_movie');
+        // $movie->views = $request->input('views');
         $movie->update();
         $movie->categories()->sync($request->categories_id);
-        Session::flash('userupdate','User Has Been updated successfully!!!!!!!!!!!!!!!!!');
+        Session::flash('movieupdate');
         return redirect()->route('movies.index');
     }
 
@@ -273,7 +211,16 @@ class MovieController extends Controller
         $movie = Movie::find($id);
         $movie->delete();
 
-        Session::flash('userdeleted','User Has Been Deleted');
+        Session::flash('moviedeleted');
         return redirect()->route('movies.index');
+    }
+
+
+    public function changeTopMovie(Request $request)
+    {
+        $movie= Movie::find($request->movie_id);
+        $movie->top = $request->top;
+        $movie->save();
+        return response()->json(['success'=>'Status change successfully.']);
     }
 }

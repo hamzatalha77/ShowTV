@@ -28,18 +28,18 @@
                 <input type="text" name="number" value="{{ $season->number }}" class="metro-input">
             </div>
             <div class="form-group">
-                <label>IMDB</label>
-                <input type="number" value="{{ $season->imdb_season }}" name="imdb_season" step="0.01" min="0" class="metro-input">
-            </div>
-            <div class="form-group">
                 <label>Youtube Link</label>
                 <input type="text" name="youtube_link" value="{{ $season->youtube_link }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>saison image</label>
+                <input type="text" name="photo_season" value="{{ $season->photo_season }}" class="metro-input">
             </div>
         <div class="image-upload-one">
             <div class="center">
               <div class="form-input">
                 <label for="file-ip-1">
-                  <img id="file-ip-1-preview" src="{{ asset('image1/' .$season->photo_season) }}">
+                  <img id="file-ip-1-preview" src="{{ $season->photo_season }}">
                   <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button>
                 </label>
                 <input type="file"  name="photo_season" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);" hidden>
@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary btn11" type="submit">Submit form</button>
+        <button class="btn btn-primary btn11" type="submit">Edit Season</button>
     </form>
 @stop
 

@@ -14,9 +14,8 @@ class CreateGenresTable extends Migration
     public function up()
     {
         Schema::create('genres', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('genre')->nullable();
-            $table->timestamps();
         });
     }
 

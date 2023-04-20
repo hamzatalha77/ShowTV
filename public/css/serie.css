@@ -1,373 +1,468 @@
-html{
-    font-family: 'Lemonada', cursive;
+html {
+    font-family: "Lemonada", cursive;
 }
-section{
+section {
+    position: relative;
+    /* margin-top: 13px; */
     padding: 10px;
 }
-.infos{
+
+.infos {
+    margin-top: -15px;
     background-color: rgba(0, 0, 0, 0.7);
     position: relative;
     width: 100%;
     height: 275px;
     padding: 10px;
 }
-.part1{
+.part1 {
     float: left;
     position: relative;
     height: 20%;
     top: -7rem;
-
 }
 
-.movie_image{
+.movie_image {
     position: relative;
     top: 9rem;
-    left: 5rem
+    left: 5rem;
 }
 
-.movie_image img{
-    border: 1px solid #FEC107;
-  border-radius: 4px;
-  padding: 5px;
-  width: 178px;
-  position: relative;
-  top: -2rem;
+.movie_image img {
+    border: 1px solid #fec107;
+    border-radius: 4px;
+    padding: 5px;
+    width: 178px;
+    position: relative;
+    top: -2rem;
 }
 
-.part2{
-    float: right;
+.part2 {
+    /* float: right; */
     text-align: right;
     position: relative;
     height: 20%;
-    top: -7rem;
-
+    /* top: -7rem; */
 }
-.cat{
+.cat {
     display: flex;
 }
-.cra{
+.cra {
     display: flex;
 }
-.date{
+.date {
     display: flex;
 }
-.imdb{
+.imdb {
     display: flex;
 }
-.dura{
+.dura {
     display: flex;
 }
-.qua{
+.qua {
     display: flex;
 }
-.lan{
+.lan {
     margin-bottom: 1em;
 }
-.con{
+.con {
     margin-bottom: 1em;
 }
-.sto{
+.sto {
     margin-bottom: 1em;
 }
-.cat h4{
+.cat h4 {
     margin: 0px;
     margin-left: 17px;
     padding-bottom: 1rem;
 }
 
-
-.cra h4{
+.cra h4 {
     margin: 0px;
     margin-left: 17px;
     padding-bottom: 1rem;
 }
-.eng{
-
+.eng {
     position: relative;
     left: 27rem;
     /* top: -4rem; */
     bottom: 18rem;
 }
 
-span{
-    color: #FEC107;
-    font-family: 'Lemonada', cursive;
+span {
+    color: #fec107;
+    font-family: "Lemonada", cursive;
 }
 
-.eng h1{
-    color: #FEC107;
+.eng h1 {
+    color: #fec107;
     font-size: 3rem;
-    font-family: 'Lemonada', cursive;
-    margin-left: -5.5em;
+    font-family: "Lemonada", cursive;
 }
-.eng h4{
-     color:  #fff;
-     font-family: 'Lemonada', cursive;
- }
-.arb h4{
+.eng h4 {
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.arb h4 {
     display: unset;
-     color:  #fff;
-     font-family: 'Lemonada', cursive;
- }
-.eng h4{
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
     display: flex;
 }
-.arb{
+.arb {
     position: relative;
-    bottom: -7rem;
+    bottom: -6rem;
     width: 40%;
-    right: -101rem;
+    float: right;
+    /* right: -93rem; */
 }
-.adb{
+.adb {
     background-color: rgba(0, 0, 0, 0.7);
     height: 60px;
-    width: 83%;
+    width: 100%;
     position: relative;
     padding: 10px;
     top: 1em;
-    left: 31rem;
 }
-.adb p{
+.adb p {
     text-align-last: center;
-    font-family: 'Lemonada', cursive;
+    font-family: "Lemonada", cursive;
 }
-.big-div{
-    background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
-    height: 51rem;
-    width: 16%;
-    top: -4rem;
 
-}
-.big-div h5{
-    color: white;
-    font-size: 15px;
-    font-family: 'Lemonada', cursive;
-}
-.div1 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-.div2 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-.div3 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-    .actors{
-    position: relative;
-    left: 14rem;
-    bottom: 10rem;
+@media (min-width: 320px) and (max-width: 600px) {
+    .infos {
+        height: 770px;
     }
 
+    .eng {
+        left: 0rem;
+        top: 9rem;
+    }
 
+    .part2 {
+        top: 33rem;
+        /* left: -91rem; */
+    }
+    .part1 {
+        float: none;
+    }
 
-.div1{
-position: relative;
-bottom: -3rem
-
+    .arb {
+        width: 95%;
+    }
 }
-.div2{
-    position: relative;
-    bottom: 1rem
+@media (min-width: 601px) and (max-width: 1000px) {
+    .infos {
+        height: 526px;
+    }
+    .part2 {
+        top: 11rem;
+        /* right: 70rem; */
+    }
+    .arb {
+        width: 65%;
+    }
 }
-.div3{
-    position: relative;
- bottom: 5rem;
-
+@media (min-width: 1000px) and (max-width: 1580px) {
+    .part2 {
+        /* right: 30rem; */
+    }
 }
 
-
-#Server{
-    float: right;
-    text-align: right;
-    position: relative;
+.adb {
     background-color: rgba(0, 0, 0, 0.7);
-    width: 300px;
-    height: 38.7vh;
-    top: -94rem;
-    bottom: 69rem;
-    float: right;
-    color: #ffc107;
-    font-family: 'Lemonada', cursive;
+    height: 60px;
+    position: relative;
     padding: 10px;
-    font-size: 15px;
-    text-align: center;
-
-   }
-   .Trailer{
-    background-color: #ffc107;
-    width: 200px;
-    height: 40px;
-    color: #000;
-    margin-bottom: 17px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 38px;
-    padding-top: 7px;
-    /* border-radius: 5%; */
-    /* border-radius: 25% 10%; */
-    border-radius: 25px;
-    font-style: bold;
-   }
-    .Server1{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Server2{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Download1{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Download2{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-
-
-.videos{
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 30rem;
-    left: 31rem;
-    bottom: 58rem;
-    width: 66%;
-
+    top: 5px;
 }
-.swiper {
-    width: 56%;
-    height: 29%;
-    position: relative;
-    top: 31rem;
-  }
+.adb p {
+    text-align-last: center;
+    font-family: "Lemonada", cursive;
+}
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+.content {
+    margin-top: -30px;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: column-reverse;
+}
+
+.content > .actors {
+    max-width: fit-content;
+    flex: 1;
+    top: 4rem;
+    float: left;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+.content > .main {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: -33rem;
+    margin: 0 auto;
+}
+
+.actors {
+    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
+    margin: 0 auto;
+    display: flex;
+    max-width: max-content;
+    margin-top: 0em;
+}
 
-  .swiper-slide h5{
-      position: relative;
-      left: 20rem;
-  }
-  .swiper-slide,.poster img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .text{
-      position: relative;
-
-  }
-  .swiper-slide,.poster h6{
-      color: #FEC107;
-      font-size: 2rem;
-  }
+.actor {
+    padding: 10px;
+}
+.actor-info {
+    display: inline-flex;
+    width: 108%;
+}
+.actor-info img {
+    width: 100px;
+    height: 100px;
+}
+.actor-name {
+    padding-left: 14px;
+    padding-top: 13px;
+}
+.actor-name h2 {
+    font-family: "Lemonada", cursive;
+    color: #fff;
+    font-size: 12px;
+}
+.actor-name span h2 {
+    font-family: "Lemonada", cursive;
+    color: #fec107;
+    font-size: 12px;
+    padding-top: 20px;
+}
 
 .main {
-font-family: Arial;
-width: 97rem;
-left: 2rem;
-display: block;
-position: relative;
-margin: 100px auto;
+    width: 97rem;
+    position: relative;
+    /* margin: 100px auto; */
 }
-h3 {
-background: #fff;
-color: #3498db;
-font-size: 36px;
-line-height: 100px;
-margin: 10px;
-padding: 2%;
-position: relative;
-text-align: center;
-}
-.action{
-display:block;
-margin:100px auto;
-width:100%;
-text-align:center;
-}
-.action a {
-display:inline-block;
-padding:5px 10px;
-background:#f30;
-color:#fff;
-text-decoration:none;
-}
-.action a:hover{
-background:#000;
-}
-.part{
-position: relative;
-padding: 18px;
-width: 100px;
-}
-.part h6{
-text-align-last: center;
-margin-left: -10rem;
-font-size: 19px;
-font-family: 'Lemonada', cursive;
-}
-.part img{
 
-padding: 5px;
-width: 150px;
+.part {
+    position: relative;
+    padding: 18px;
+    width: 100px;
+}
+.part h6 {
+    text-align-last: center;
+    margin-left: -10rem;
+    font-size: 19px;
+    font-family: "Lemonada", cursive;
+}
+.part img {
+    padding: 5px;
+    width: 150px;
+}
+@media only screen and (max-width: 1500px) {
+    .content > .actors {
+        display: flex;
+        top: 37rem;
+        margin: 0 auto;
+        /* place-self: center; */
+    }
+    .content > .main {
+        top: -10rem;
+    }
+    .actors {
+        /* display: block; */
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fec107;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fec107;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .content > .actors {
+        /* left: -19rem; */
+        margin-left: 19%;
+        text-align-last: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .actors {
+        /* display: block; */
+        margin: 0 auto;
+    }
+    .actor-info {
+        width: 105%;
+        display: block;
+    }
+    .content > .main {
+        top: -20rem;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 500px) {
+    .content > .actors {
+        display: block;
+        top: 36rem;
+        float: left;
+        margin-left: 6rem;
+    }
+
+    .actors {
+        margin: 0 auto;
+    }
+    .actor-info {
+    }
+    .content > .main {
+        top: -40rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .actors {
+        display: table;
+        position: relative;
+        margin: 0px auto;
+    }
+}
+
+.themoviename {
+    display: flex;
+}
+.carousel {
+    position: relative;
+    width: 1200px;
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-item {
+    width: 4140px;
+    margin-left: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+/* .slick-prev,
+  .slick-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 5px;
+    z-index: 1;
+    transition: 0.3s linear;
+  }
+  
+  .slick-prev {
+    left: 40px;
+  }
+  
+  .slick-next {
+    right: 20px;
+  }
+  
+  .slick-prev:hover,
+  .slick-next:hover {
+    background: #0be881;
+    color: white;
+    border: none;
+  } */
+
+.video-overlay {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: all ease 500ms;
+}
+
+.video-overlay.open {
+    position: fixed;
+    z-index: 1000;
+    opacity: 1;
+}
+
+.video-overlay-close {
+    position: absolute;
+    z-index: 1000;
+    top: 15px;
+    right: 20px;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+    color: #fa183d;
+}
+
+.video-overlay iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* width: 90%; */
+    /* height: auto; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
+.button {
+    background-color: #fec107; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin-top: -3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.m2 {
+    margin-right: 0.5rem !important;
+}
+button span {
+    color: white;
+    padding-left: 10px;
+    font-size: 11px;
+}
+.seasons {
+    color: white;
 }

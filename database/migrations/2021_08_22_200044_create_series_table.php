@@ -18,14 +18,15 @@ class CreateSeriesTable extends Migration
             $table->string('serie_name')->nullable();
             $table->string('description')->nullable();
             $table->string('age_classification')->nullable();
+            $table->string('class_serie')->nullable();
             $table->string('language')->nullable();
             $table->string('imdb')->nullable();
             $table->string('slug')->nullable();
             $table->string('user_name')->nullable();
             $table->string('country')->nullable();
             $table->string('tags')->nullable();
-            $table->boolean('status')->default(false);
             $table->string('serie_photo')->nullable();
+            $table->string('image_poster_serie')->nullable();
             $table->string('youtube_link')->nullable();
             $table->string('name_producer')->nullable();
             $table->string('real_name_actor1')->nullable();
@@ -39,6 +40,10 @@ class CreateSeriesTable extends Migration
             $table->string('photo_actor2')->nullable();
             $table->string('photo_actor3')->nullable();
             $table->string('date_release')->nullable();
+            $table->string('views')->nullable();
+            $table->string('special')->default(false);
+            $table->boolean('status')->default(false);
+            $table->boolean('top')->default(false);
             $table->timestamps();
         });
     }

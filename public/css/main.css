@@ -1,276 +1,502 @@
-html{
-    font-family: 'Lemonada', cursive;
+html {
+    font-family: "Lemonada", cursive;
 }
-section{
+body {
+    font-family: "Lemonada", cursive;
+}
+section {
+    position: relative;
+    margin-top: 13px;
     padding: 10px;
 }
-.infos{
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fec107;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fec107;
+}
+.infos {
     background-color: rgba(0, 0, 0, 0.7);
     position: relative;
     width: 100%;
     height: 275px;
     padding: 10px;
+    margin-top: -28px;
 }
-.part1{
+.part1 {
     float: left;
     position: relative;
     height: 20%;
     top: -7rem;
-
 }
 
-.movie_image{
+.movie_image {
     position: relative;
     top: 9rem;
-    left: 5rem
+    left: 5rem;
 }
 
-.movie_image img{
-    border: 1px solid #FEC107;
-  border-radius: 4px;
-  padding: 5px;
-  width: 178px;
-  position: relative;
-  top: -2rem;
+.movie_image img {
+    border: 1px solid #fec107;
+    border-radius: 4px;
+    padding: 5px;
+    width: 178px;
+    position: relative;
+    top: -2rem;
 }
 
-.part2{
-    float: right;
+.part2 {
+    /* float: right; */
     text-align: right;
     position: relative;
     height: 20%;
-    top: -7rem;
-
+    /* top: -7rem; */
 }
-.cat{
+.cat {
     display: flex;
 }
-.cra{
+.cra {
     display: flex;
 }
-.date{
+.date {
     display: flex;
 }
-.imdb{
+.imdb {
     display: flex;
 }
-.dura{
+.dura {
     display: flex;
 }
-.qua{
+.qua {
     display: flex;
 }
-.lan{
+.lan {
     margin-bottom: 1em;
 }
-.con{
+.con {
     margin-bottom: 1em;
 }
-.sto{
+.sto {
     margin-bottom: 1em;
 }
-.cat h4{
+.cat h4 {
     margin: 0px;
     margin-left: 17px;
     padding-bottom: 1rem;
 }
 
-
-.cra h4{
+.cra h4 {
     margin: 0px;
     margin-left: 17px;
     padding-bottom: 1rem;
 }
-.eng{
-
+.eng {
     position: relative;
     left: 27rem;
-    /* top: -4rem; */
     bottom: 18rem;
 }
 
-span{
-    color: #FEC107;
-    font-family: 'Lemonada', cursive;
+span {
+    color: #fec107;
+    font-family: "Lemonada", cursive;
 }
 
-.eng h1{
-    color: #FEC107;
+.eng h1 {
+    color: #fec107;
     font-size: 3rem;
-    font-family: 'Lemonada', cursive;
-    margin-left: -5.5em;
+    font-family: "Lemonada", cursive;
 }
-.eng h4{
-     color:  #fff;
-     font-family: 'Lemonada', cursive;
- }
-.arb h4{
+.eng h4 {
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.arb h4 {
     display: unset;
-     color:  #fff;
-     font-family: 'Lemonada', cursive;
- }
-.eng h4{
+    color: #fff;
+    font-family: "Lemonada", cursive;
+}
+.eng h4 {
     display: flex;
 }
-.arb{
+.arb {
+    float: right;
     position: relative;
     bottom: -6rem;
     width: 40%;
-    right: -93rem;
+    /* right: -93rem; */
 }
-.adb{
+.adb {
     background-color: rgba(0, 0, 0, 0.7);
     height: 60px;
     width: 100%;
     position: relative;
     padding: 10px;
-    top: 1em;
+    top: 5px;
 }
-.adb p{
+.adb p {
     text-align-last: center;
-    font-family: 'Lemonada', cursive;
+    font-family: "Lemonada", cursive;
 }
-.big-div{
-    background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
-    height: 368px;
-    width: 16%;
-    top: 4rem;
 
-}
-.big-div h5{
-    color: white;
-    font-size: 15px;
-    font-family: 'Lemonada', cursive;
-}
-.div1 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-.div2 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-.div3 img{
-    border-radius: 4px;
-    padding: 5px;
-    width: 106px;
-    position: relative;
-    top: -2rem;
-}
-    .actors{
-    position: relative;
-    left: 14rem;
-    bottom: 10rem;
+@media (min-width: 320px) and (max-width: 600px) {
+    .infos {
+        height: 770px;
     }
 
+    .eng {
+        left: 0rem;
+        top: 9rem;
+    }
 
-
-.div1{
-position: relative;
-bottom: -3rem
-
+    .part2 {
+        top: 33rem;
+        /* left: -91rem; */
+    }
+    .part1 {
+        float: none;
+    }
+    .arb {
+        width: 95%;
+    }
 }
-.div2{
-    position: relative;
-    bottom: 1rem
+@media (min-width: 601px) and (max-width: 1000px) {
+    .infos {
+        height: 526px;
+    }
+    .part2 {
+        top: 17rem;
+        /* right: 70rem; */
+    }
+    .arb {
+        width: 65%;
+    }
 }
-.div3{
-    position: relative;
- bottom: 5rem;
-
+@media (min-width: 1000px) and (max-width: 1580px) {
+    .part2 {
+        /* right: 30rem; */
+    }
 }
 
-
-#Server{
-    float: right;
-    text-align: right;
+.watching {
     position: relative;
+    z-index: 20;
+    padding-top: 10px;
+    /* padding: 30px; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.streaming {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    flex-direction: row-reverse;
+}
+.boxx1 {
     background-color: rgba(0, 0, 0, 0.7);
-    width: 300px;
-    height: 38.7vh;
-    top: -94rem;
-    bottom: 69rem;
-    float: right;
-    color: #ffc107;
-    font-family: 'Lemonada', cursive;
-    padding: 10px;
-    font-size: 15px;
+}
+.streaming > .boxx1 {
+    max-width: 222px;
+    min-width: 285px;
+    padding-top: 86px;
+    flex: 1;
+    margin-right: 0px;
+    /* max-height: 500px; */
+    margin-left: 5px;
+    overflow: auto;
+}
+.streaming > .boxx1 a {
+    margin: 10px;
+    display: block;
+    background: #fec107;
+    height: 40px;
+    cursor: pointer;
+    /* margin-top: 45px; */
+    color: black;
+    margin-bottom: 19px;
+    position: relative;
+    font-family: "Lemonada", cursive;
+    vertical-align: top;
+    line-height: 40px;
+    border-radius: 13px;
+    font-size: 13px;
     text-align: center;
-
-   }
-   .Trailer{
-    background-color: #ffc107;
-    width: 200px;
-    height: 40px;
-    color: #000;
-    margin-bottom: 17px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 38px;
-    padding-top: 7px;
-    /* border-radius: 5%; */
-    /* border-radius: 25% 10%; */
-    border-radius: 25px;
-    font-style: bold;
-   }
-    .Server1{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Server2{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Download1{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-    .Download2{
-    background-color: #ffc107;
-    color: #000;
-    width: 200px;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 7px;
-    border-radius: 25px;
-   }
-
-
-.videos{
+}
+.streaming > .boxx1 a.activeme {
+    background-color: black;
+    color: #fec107;
+}
+.actors {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 61rem;
-    left: 31rem;
-    bottom: 33rem;
-    width: 66%;
+    /* top: 59px; */
+    margin: 0 auto;
+    display: flex;
+}
+.streaming > .boxx2 {
+    flex: 1;
+    padding-bottom: 35%;
+    /* left: -15px; */
+    max-height: 0;
+    /* padding: 241px; */
+    position: relative;
+    margin-bottom: 40px;
+}
 
+.my-watch {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 25px 18px 52px -13px;
+    height: 107%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0px;
+    /* padding-top: 27px; */
+    /* padding-left: 19px; */
+    padding-right: -5px;
+    /* position:relative; */
+    overflow: hidden;
+    /* padding-bottom: 44.25%; */
+}
+.streaming > .boxx2 .my-watch * {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+    .streaming > .boxx1 {
+        min-width: 207px;
+        max-width: 180px;
+        overflow: auto;
+        padding-top: 9px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .streaming > .boxx1 a {
+        margin-bottom: 6px;
+    }
+    .streaming > .boxx2 {
+        min-width: 370px;
+        top: 19px;
+        padding-bottom: 45%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .watching {
+        padding: 10px;
+    }
+    .streaming > .boxx1 {
+        max-width: inherit;
+        overflow: auto;
+        max-height: initial;
+        margin: 0;
+        top: 18px;
+        position: relative;
+        flex-wrap: wrap;
+        display: flex;
+        min-width: 100%;
+    }
+    .streaming > .boxx1 a {
+        min-width: 100px;
+        height: 22px;
+
+        padding-right: 12px;
+        line-height: 21px;
+        font-size: 9px;
+        flex: 1;
+    }
+    .streaming > .boxx2 {
+        min-width: 100%;
+        top: 34px;
+        left: 2px;
+    }
+    .streaming > .boxx3 {
+        top: 9px;
+        left: 0px;
+        height: auto;
+    }
+    .actors {
+        display: block;
+        top: 6px;
+    }
+}
+
+.boxx4 {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.streaming > .boxx4 {
+    max-width: 221px;
+    min-width: 266px;
+    flex: 1;
+    /* left: -40px; */
+    padding-top: 120px;
+    position: relative;
+    margin-right: 5px;
+    /* padding-left: 10px; */
+    /* max-height: 500px; */
+    /* margin-left: -28px; */
+    overflow: auto;
+    /* width: 107%; */
+    float: left;
+}
+.streaming > .boxx4 a {
+    display: block;
+    background: #fec107;
+    height: 40px;
+    cursor: pointer;
+    margin: 10px;
+    /* padding: 5px; */
+    color: black;
+    margin-bottom: 19px;
+    position: relative;
+    font-family: "Lemonada", cursive;
+    vertical-align: top;
+    line-height: 40px;
+    border-radius: 13px;
+    font-size: 13px;
+    text-align: center;
+}
+@media only screen and (max-width: 800px) {
+    .boxx4 {
+        /* width: 77%; */
+        display: -webkit-inline-box;
+    }
+    .streaming > .boxx4 {
+        /* width: 110%; */
+        padding-top: 7px;
+        margin: 12px auto;
+        /* padding-left: 33px; */
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .streaming > .boxx4 {
+        top: 10px;
+        /* margin-left: 12px; */
+        left: -16px;
+        padding-top: 5px;
+        /* width: 65%; */
+        margin: 0 auto;
+        padding-right: -11px;
+        /* max-width: 706px; */
+    }
+}
+
+.boxx3 {
+    /* max-width: 245px; */
+    /* min-width: 222px; */
+    flex: 1;
+    margin: 0 auto;
+    /* width: 41%; */
+    margin-top: 10px;
+    /* padding-top: 20px; */
+    width: fit-content;
+    /* left: -29px; */
+    position: relative;
+    /* margin-right: 14px; */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* height: 60vh; */
+}
+
+.actor {
+    padding: 10px;
+}
+.actor-info {
+    display: inline-flex;
+    width: 108%;
+}
+.actor-info img {
+    width: 100px;
+    height: 100px;
+}
+.actor-name {
+    padding-left: 14px;
+    padding-top: 13px;
+}
+.actor-name h2 {
+    font-family: "Lemonada", cursive;
+    color: #fff;
+    font-size: 12px;
+}
+.actor-name span h2 {
+    font-family: "Lemonada", cursive;
+    color: #fec107;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .boxx3 .actors {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .actors {
+        top: -6px;
+    }
+    .boxx3 {
+        /* padding-left: 9px; */
+        min-width: fit-content;
+        top: 11px;
+        height: 21vh;
+    }
+    .actor-info {
+        width: 105%;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .boxx3 .actors {
+        /* margin: 0px auto; */
+        /* left: 14px; */
+        /* margin-left: 90px; */
+        animation-delay: 10px;
+        /* padding-left: 89px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .actors {
+        top: -6px;
+    }
+    .boxx3 {
+        /* padding-left: 9px; */
+        min-width: fit-content;
+        top: 11px;
+        height: 21vh;
+    }
+    .actor-info {
+        width: 105%;
+        display: block;
+    }
+}
+
+.the-actors {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.tr {
+}
+.tr button {
+}
+
+.themoviename {
+    display: flex;
 }

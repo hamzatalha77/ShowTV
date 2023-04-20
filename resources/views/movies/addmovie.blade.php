@@ -17,12 +17,20 @@
     @endif
     <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
         @csrf
-        <input id="input-b1" name="image_movie" type="file" class="file" data-browse-on-zone-click="true">
+        <!-- <input id="input-b1" name="image_movie" type="text" class="metro-input" data-browse-on-zone-click="true"> -->
         <div class="myform">
             <input  type="text" name="user_name" value="{{Auth::user()->name}}" class="form-control" id="user_name" hidden>
             <div class="form-group">
                 <label>Movie Name</label>
                 <input type="text" name="movie_name" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Movie Image</label>
+                <input type="text" name="image_movie" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Image poster</label>
+                <input type="text" name="image_poster_movie" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Tags</label>
@@ -393,9 +401,6 @@
                 <input type="radio" name="quality" value="1080P" data-role="radio" checked>1080P
                 <input type="radio" name="quality" value="720P" data-role="radio">720P
                 <input type="radio" name="quality" value="480p" data-role="radio">480p
-                <input type="radio" name="quality" value="360p" data-role="radio">360p
-                <input type="radio" name="quality" value="240p" data-role="radio">240p
-                <input type="radio" name="quality" value="144p" data-role="radio">144p
             </div>
             <div class="form-group">
                 <label>IMDB</label>
@@ -431,48 +436,82 @@
                 <label>Youtube Link</label>
                 <input type="text" name="youtube_link" class="metro-input">
             </div>
+            <input type="text" name="views" value="0" hidden>
             <div class="form-group">
-                <label>Movie Link</label>
-                <input type="text" name="movie_link" class="metro-input">
+                <label>Server 1</label>
+                <input type="text" name="server_1" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 2</label>
+                <input type="text" name="server_2" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 3</label>
+                <input type="text" name="server_3" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 4</label>
+                <input type="text" name="server_4" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 5</label>
+                <input type="text" name="server_5" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 6</label>
+                <input type="text" name="server_6" class="metro-input">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Movie Download Link</label>
-                <input type="text" class="form-control" name="download_link" id="exampleInputPassword1">
-              </div>
+                <label for="exampleInputPassword1" class="form-label">Movie Download Link 1</label>
+                <input type="text" class="form-control" name="download_link_1" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Movie Download Link 2</label>
+                <input type="text" class="form-control" name="download_link_2" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Movie Download Link 3</label>
+                <input type="text" class="form-control" name="download_link_3" id="exampleInputPassword1">
+            </div>
             <div class="form-group">
                 <label>class</label>
                 <select name="class" data-role="select">
-                    <option value="translated movies">translated movies</option>
-                    <option value="American Movies">American Movies</option>
-                    <option value="japanese movies">japanese movies</option>
-                    <option value="korean movies">korean movies</option>
+                    <option value="أفلام أجنبية">أفلام أجنبية</option>
+                    <option value="أفلام تركية">أفلام تركية</option>
+                    <option value="أفلام أسيوية">أفلام أسيوية</option>
+                    <option value="أفلام هندية">أفلام هندية</option>
+                    <option value="أفلام عربية">أفلام عربية</option>
+                    <option value="أفلام انمي">أفلام انمي</option>
+                    <option value="أفلام كرتون">أفلام كرتون</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Producteur </label>
-                <input type="text" name="name_producer" style="width: 250px;">
-                <input type="file" name="photo_productor" data-role="file" style="width: 277px; left: 263px;top: -2.29rem;">
+                <input type="text" name="name_producer" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 1</label>
-                <input type="text" name="name_actor1" style="width: 250px;">
+                <input type="text" name="name_actor1" class="metro-input">
                 <label>real name Actor 1</label>
-                <input type="text" name="real_name_actor1" style="width: 250px;">
-                <input type="file" name="photo_actor1" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor1" class="metro-input">
+                <label>image Actor 1</label>
+                <input type="text" name="photo_actor1"  class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 2</label>
-                <input type="text" name="name_actor2" style="width: 250px;">
+                <input type="text" name="name_actor2" class="metro-input">
                 <label>real name Actor 2</label>
-                <input type="text" name="real_name_actor2" style="width: 250px;">
-                <input type="file" name="photo_actor2" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor2" class="metro-input">
+                <label>image Actor 2</label>
+                <input type="text" name="photo_actor2" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 3</label>
-                <input type="text" name="name_actor3" style="width: 250px;">
+                <input type="text" name="name_actor3" class="metro-input">
                 <label>real name Actor 3</label>
-                <input type="text" name="real_name_actor3" style="width: 250px;">
-                <input type="file" name="photo_actor3" data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor3" class="metro-input">
+                <label>image Actor 3</label>
+                <input type="text" name="photo_actor3"  class="metro-input">
             </div>
 
             <button type="submit" class="button mif-download primary large rounded">  Add This Movie</button>

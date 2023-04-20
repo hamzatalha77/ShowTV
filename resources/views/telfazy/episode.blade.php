@@ -1,9 +1,11 @@
+@if( $episode->status == 1)
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/images/favLogo.png" type="image/x-icon"/>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,31 +15,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css"/>
+    <script src="https://w.egydead.live/wp-content/themes/04-07-2021/Interface/js/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/strip.css">
     <link rel="stylesheet" href="/css/list.css">
-    <link rel="stylesheet" href="/css/episodes.css">
-    <link rel="stylesheet" href="/css/nox.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/episode.css">
+
+    <title>Telfazy | {{ $episode->season->season_name}} {{ $episode->episode_name }}  {{ $episode->season->serie->serie_name }} مسلسل </title>
 </head>
-<body>
-    @include('telfazy.navbar2')
+<body onload="myFunction()">
+    @include('telfazy.loading')
+    @include('telfazy.navbar3')
 
     <section>
 
-        <div class="infos">
+        {{-- <div class="infos">
 
             <div class="part1">
                 <div class="movie_image">
-                     <img src="{{ asset('image1/'.$episode->season->photo_season) }}" alt="">
+                     <img src="{{ $episode->season->photo_season }}" alt="">
                 </div>
-                <div class="eng">
-                    <h1>{{$episode->season->season_name}}</h1>
 
-                    <div class="cat">
-                      <span>Category : @foreach($episode->season->serie->genres as $genre)
-                        </span><h4>{{ $genre->genre }}</h4>
-                       @endforeach
-                    </div>
+                <div class="eng">
+                    <div class="themoviename">
+                    <h1>{{$episode->season->season_name}}</h1>
+                 </div>
+                <div class="cat">
+                    <span>Category : @foreach($episode->season->serie->genres as $genre)
+                      </span><h4>{{ $genre->genre }}</h4>
+                     @endforeach
+                  </div>
 
                     <div class="cra">
                         <span>Creator : </span><h4> {{ $episode->season->serie->name_producer }}</h4>
@@ -53,6 +59,14 @@
                         <span>IMDB :</span><h4> {{  $episode->season->serie->imdb }}</h4>
                     </div>
 
+
+                    <div class="dura">
+                        <span>Duration :</span><h4>{{  $episode->duration }}</h4>
+                    </div>
+
+                    <div class="qua">
+                         <span>Qyality :</span><h4> {{  $episode->quality }}</h4>
+                    </div>
 
                 </div>
 
@@ -73,128 +87,139 @@
                 </div>
             </div>
 
+        </div> --}}
+
+        <div class="adb">
+            <span><p>{{  $episode->season->serie->serie_name }}</p></span>
+            </div>
+
+    <div class="adb1">
+<label class="titles"> {{ $episode->season->season_name}} {{ $episode->episode_name }}</label>
+    <div class="main">
+
+                <input type="checkbox" id="drop-1" hidden>
+                <label class="dropHeader dropHeader-1" for="drop-1">▼ المواسم</label>
+                <div class="list list-1">
+                    @foreach ($seasons as $season)
+                <div class="item"><a href="{{ route('showepisodetelfazy', $season->id) }}">{{$season->season_name}}</a></div>
+                     @endforeach
+
+                </div>
+            </div>
+    </div>
+    @if($episode->season->serie->special == 0)
+
+    <div class="watching">
+        <div class="streaming">
+            <div class="boxx1">
+                    {{-- <a class="link-server" data-link="//www.youtube.com/embed/jZutzZ1OCUc">مشاهدة التريلر</a> --}}
+                    <a class="link-server" data-link="{{$episode->server_1}}"> سيرفر المشاهدة 1</a>
+                    <a class="link-server" data-link="{{$episode->server_2}}"> سيرفر المشاهدة 2</a>
+                    <a class="link-server" data-link="{{$episode->server_3}}"> سيرفر المشاهدة 3</a>
+                    <a class="link-server" data-link="{{$episode->server_4}}">تحميل سيرفر 1</a>
+                    <a class="link-server" href="#">تحميل سيرفر 2</a>
+                    <a class="link-server" href="#">تحميل سيرفر 3</a>
+            </div>
+            <div class="boxx2">
+                <div class="my-watch">
+
+                        <iframe src=""width="100%" height="460" frameborder="0" scrolling="auto" title="La Casa De Papel   Parte 5 Vol. 1   Tráiler Oficial   Netflix" style="position:absolute;" allowfullscreen></iframe>
+
+            </div>
+            </div>
+
+
+            <div class="boxx3">
+
+
+                @foreach ($episodes as $episode)
+                <a href="{{ route('myepisode', $episode['id']) }}" id="{{$episode['id']}}">{{ $episode->episode_name }}</a>
+                @endforeach
+
+
+                </div>
+
         </div>
+    </div>
+@else
+    <div class="watching">
+        <div class="streaming">
+            <div class="boxx1">
+                    {{-- <a class="link-server" data-link="//www.youtube.com/embed/jZutzZ1OCUc">مشاهدة التريلر</a> --}}
+                    <a class="link-server" data-link="{{$episode->server_1}}"> سيرفر المشاهدة 1</a>
+                    <a class="link-server" data-link="{{$episode->server_2}}"> سيرفر المشاهدة 2</a>
+                    <a class="link-server" data-link="{{$episode->server_3}}"> سيرفر المشاهدة 3</a>
+                    <a class="link-server" data-link="{{$episode->server_4}}">تحميل سيرفر 1</a>
+                    <a class="link-server" href="{{ route('download', $episode->id) }} }}">تحميل سيرفر 2</a>
+                    <a class="link-server" href="#">تحميل سيرفر 3</a>
+            </div>
+            <div class="boxx2">
+                <div class="my-watch">
+
+                        <iframe src=""width="100%" height="460" frameborder="0" scrolling="auto" title="La Casa De Papel   Parte 5 Vol. 1   Tráiler Oficial   Netflix" style="position:absolute;" allowfullscreen></iframe>
+
+            </div>
+            </div>
 
 
-
-<div class="adb">
-   <span><p>{{  $episode->season->serie->serie_name }}</p></span>
-</div>
-<div class="adb1">
-    <p> {{ $episode->season->season_name}} {{ $episode->episode_name }} </p>
-</div>
-<div id="Seasons">
-
-    <ul>
-       <li class="Uls"><label>▾ المواسم  </label>
-          <ul>
-            @foreach ($seasons as $season)
-             <li><a href="{{ route('showepisodetelfazy', $season->id) }}">{{$season->season_name}}</a></li>
-             @endforeach
-
-          </ul>
-       </li>
-    </ul>
- </div>
-<div class="second-section">
+            <div class="boxx3">
 
 
-<div class="big-div">
+                @foreach ($episodes as $episode)
+                <a href="{{ route('myepisode', $episode['id']) }}" id="{{$episode['id']}}">{{ $episode->episode_name }}</a>
+                @endforeach
 
-    <div class="div1">
 
-        <img src="{{ asset('image3/' . $episode->season->serie->photo_actor1) }}" alt="">
-        <div class="actors">
+                </div>
 
-        <h5>{{  $episode->season->serie->name_actor1 }}</h5>
-        <h5><span>{{  $episode->season->serie->real_name_actor1 }}</span></h5>
         </div>
-
-
     </div>
 
-    <div class="div2">
-
-        <img src="{{ asset('image4/' . $episode->season->serie->photo_actor2) }}" alt="">
-
-          <div class="actors">
-
-        <h5>{{  $episode->season->serie->name_actor2 }}</h5>
-        <h5><span>{{  $episode->season->serie->real_name_actor2 }}</span></h5>
-        </div>
-
-    </div>
-
-    <div class="div3">
-
-        <img src="{{ asset('image5/' . $episode->season->serie->photo_actor3) }}" alt="">
-        <div class="actors">
-
-        <h5>{{  $episode->season->serie->name_actor3 }}</h5>
-        <h5><span>{{  $episode->season->serie->real_name_actor3 }}</span></h5>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="videos">
-
-
-    <iframe width="1220" height="440" src="https://www.youtube.com/embed/qehr5WUfJUk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</div>
-{{-- <div class="main">
-    <div class="slider slider-nav">
-@foreach ($seasons as $season)
-<div class="part"> <h6>{{$season->season_name}}</h6><a href="{{ route('showepisodetelfazy', $season->id) }}"><img src="{{ asset('image1/' .$season->photo_season) }}" alt=""></a></div>
-@endforeach
-    </div>
-  </div> --}}
+@endif
 
 
 
 
 
-  <div class="vertical-menu">
 
-    @foreach ($episodes as $episode)
-    <a href="{{ route('myepisode', $episode['id']) }}">{{ $episode->episode_name }}</a>
-    @endforeach
 
-  </div>
+
+
     </section>
-
-
     @include('telfazy/footer')
+<script>
+function myFunction(){
+    var url = window.location.pathname;
+    var url_array = url.split('/');
+    var last_segment = "{{ $a }}";
+    //document.getElementByID(last_segment).style.backgroundColor = "green";
+    document.getElementById(last_segment).style.backgroundColor = 'black' ;
+    document.getElementById(last_segment).style.color = '#FEC107' ;
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".link-server:first-child").addClass('activeme');
+        $(".my-watch iframe").attr('src',$('.link-server:first-child').data('link'));
+        $('.link-server').click(function(){
+            $(this).addClass('activeme').siblings().removeClass('activeme');
+            $(".my-watch iframe").attr('src',$(this).data('link'))
+        })
 
-
+    })
+</script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript"src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
-<script>
-
-$('.slider-for').slick({
-slidesToShow: 1,
-slidesToScroll: 1,
-arrows: false,
-fade: true,
-asNavFor: '.slider-nav'
-});
-$('.slider-nav').slick({
-slidesToShow: 3,
-slidesToScroll: 1,
-asNavFor: '.slider-for',
-dots: true,
-centerMode: true,
-focusOnSelect: true
-});
-</script>
+<script src="/js/loading.js"></script>
 </body>
 </html>
+@else
+    {{-- @include('telfazy.loading') --}}
+    <?php  abort(404, "website not found") ?>
+@endif
 
 
        {{-- <a href="{{ route('showep', $episodes->id) }}">{{ $episodes->episode_name }}</a> --}}

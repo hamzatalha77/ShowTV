@@ -7,7 +7,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Edit Movie</h1>
 @stop
 
 @section('content')
@@ -22,6 +22,14 @@
             <div class="form-group">
                 <label>Movie Name</label>
                 <input type="text" name="movie_name" value="{{ $movie->movie_name }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Movie Image</label>
+                <input type="text" name="image_movie" value="{{ $movie->image_movie }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Image poster</label>
+                <input type="text" name="image_poster_movie" value="{{ $movie->image_poster_movie }}" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Tags</label>
@@ -434,58 +442,102 @@
                 <input type="text" name="youtube_link" value="{{ $movie->youtube_link }}" class="metro-input">
             </div>
             <div class="form-group">
-                <label>Movie Link</label>
-                <input type="text" name="movie_link" value="{{ $movie->movie_link }}" class="metro-input">
+                <label>Server 1</label>
+                <input type="text" name="server_1" value="{{ $movie->server_1 }}" class="metro-input">
             </div>
             <div class="form-group">
-                <label>Movie Download Link</label>
-                <input type="text" name="download_link" value="{{ $movie->download_link }}" class="metro-input">
+                <label>Server 2</label>
+                <input type="text" name="server_2" value="{{ $movie->server_2 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 3</label>
+                <input type="text" name="server_3" value="{{ $movie->server_3 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 4</label>
+                <input type="text" name="server_4" value="{{ $movie->server_4 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 5</label>
+                <input type="text" name="server_5" value="{{ $movie->server_5 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Server 6</label>
+                <input type="text" name="server_6" value="{{ $movie->server_6 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Movie Download Link 1</label>
+                <input type="text" name="download_link_1" value="{{ $movie->download_link_1 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Movie Download Link 2</label>
+                <input type="text" name="download_link_2" value="{{ $movie->download_link_2 }}" class="metro-input">
+            </div>
+            <div class="form-group">
+                <label>Movie Download Link 3</label>
+                <input type="text" name="download_link_3" value="{{ $movie->download_link_3 }}" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Class</label>
                 <select name="class" data-role="select">
-                    <option value="translated movies">translated movies</option>
-                    <option value="American Movies">American Movies</option>
-                    <option value="japanese movies">japanese movies</option>
-                    <option value="korean movies">korean movies</option>
+                    <option value="أفلام أجنبية"{{($movie->class === 'أفلام أجنبية') ? 'Selected' : ''}}>أفلام أجنبية</option>
+                    <option value="أفلام تركية"{{($movie->class === 'أفلام تركية') ? 'Selected' : ''}}>أفلام تركية</option>
+                    <option value="أفلام أسيوية"{{($movie->class === 'أفلام أسيوية') ? 'Selected' : ''}}>أفلام أسيوية</option>
+                    <option value="أفلام هندية"{{($movie->class === 'أفلام هندية') ? 'Selected' : ''}}>أفلام هندية</option>
+                    <option value="أفلام عربية"{{($movie->class === 'أفلام عربية') ? 'Selected' : ''}}>أفلام عربية</option>
+                    <option value="أفلام انمي"{{($movie->class === 'أفلام انمي') ? 'Selected' : ''}}>أفلام انمي</option>
+                    <option value="أفلام كرتون"{{($movie->class === 'أفلام كرتون') ? 'Selected' : ''}}>أفلام كرتون</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Producteur </label>
-                <input type="text" name="name_producer" value="{{ $movie->name_producer }}" style="width: 250px;">
-                <input type="file" name="photo_productor"  data-role="file" style="width: 277px; left: 263px;top: -2.29rem;">
-            </div>
+                <input type="text" name="name_producer" value="{{ $movie->name_producer }}"  class="metro-input">
 
+            </div>
             <div class="form-group">
                 <label>Actor 1</label>
-                <input type="text" name="name_actor1" value="{{ $movie->name_actor1 }}" style="width: 250px;">
+                <input type="text" name="name_actor1" value="{{ $movie->name_actor1 }}" class="metro-input">
                 <label>real name Actor 1</label>
-                <input type="text" name="real_name_actor1" value="{{ $movie->real_name_actor1 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor1"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor1" value="{{ $movie->real_name_actor1 }}" class="metro-input">
+                <label>image Actor 1</label>
+                <input type="text" name="photo_actor1" value="{{ $movie->photo_actor1 }}"  class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 2</label>
-                <input type="text" name="name_actor2" value="{{ $movie->name_actor2 }}" style="width: 250px;">
+                <input type="text" name="name_actor2" value="{{ $movie->name_actor2 }}" class="metro-input">
                 <label>real name Actor 2</label>
-                <input type="text" name="real_name_actor2" value="{{ $movie->real_name_actor2 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor2"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor2" value="{{ $movie->real_name_actor2 }}" class="metro-input">
+                <label>image Actor 2</label>
+                <input type="text" name="photo_actor2" value="{{ $movie->photo_actor2 }}" class="metro-input">
             </div>
             <div class="form-group">
                 <label>Actor 3</label>
-                <input type="text" name="name_actor3" value="{{ $movie->name_actor3 }}" style="width: 250px;">
+                <input type="text" name="name_actor3" value="{{ $movie->name_actor3 }}" class="metro-input">
                 <label>real name Actor 3</label>
-                <input type="text" name="real_name_actor3" value="{{ $movie->real_name_actor3 }}"  style="width: 250px;">
-                <input type="file" name="photo_actor3"  data-role="file" style="width: 277px;left: 263px;top: -2.29rem;">
+                <input type="text" name="real_name_actor3" value="{{ $movie->real_name_actor3 }}" class="metro-input">
+                <label>image Actor 3</label>
+                <input type="text" name="photo_actor3" value="{{ $movie->photo_actor3 }}"  class="metro-input">
             </div>
         <button class="btn btn-primary" type="submit">Submit form</button>
         <div class="image-upload-one">
             <div class="center">
               <div class="form-input">
                 <label for="file-ip-1">
-                  <img id="file-ip-1-preview" src="{{ asset('image1/' .$movie->image_movie) }}">
+                  <img id="file-ip-1-preview" src="{{ $movie->image_movie }}">
                   <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button>
                 </label>
                 <input type="file"  name="image_movie" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);" hidden>
+              </div>
+            </div>
+          </div>
+        <div class="image-upload-one">
+            <div class="center">
+              <div class="form-input">
+                <label for="file-ip-1">
+                  <img id="file-ip-1-preview" src="{{ $movie->image_poster_movie }}">
+                  <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button>
+                </label>
+                <input type="file"  name="image_poster_movie" id="file-ip-1" accept="image/*" onchange="showPreviewOne(event);" hidden>
               </div>
             </div>
           </div>

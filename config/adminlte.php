@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Telfazy',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Telfazy</b>',
+    'logo_img' => 'images/Logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'telfazy',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -227,42 +227,14 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
-        ],
-        [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'portfolios',
             'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
         ],
         [
             'text'    => 'Users',
@@ -280,29 +252,44 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'Add Movies',
+            'text'       => 'Add Movie',
             'icon_color' => 'red',
             'url'        => 'movies/create',
         ],
         [
-            'text'       => 'All MY MOVIES',
-            'icon_color' => 'yellow',
+            'text'       => 'All Movies',
+            'icon_color' => 'red',
             'url'        => 'movies/index',
         ],
         [
-            'text'       => 'Add Series',
-            'icon_color' => 'cyan',
+            'text'       => 'Add Serie',
+            'icon_color' => 'yellow',
             'url'        => 'series/create',
         ],
         [
             'text'       => 'All Series',
-            'icon_color' => 'cyan',
+            'icon_color' => 'yellow',
             'url'        => 'series/show',
         ],
         [
-            'text'       => 'Telfazy',
+            'text'       => 'Add Anime',
             'icon_color' => 'cyan',
-            'url'        => 'telfazy/show',
+            'url'        => 'animes/create',
+        ],
+        [
+            'text'       => 'All Anime',
+            'icon_color' => 'cyan',
+            'url'        => 'animes',
+        ],
+        [
+            'text'       => 'Add Message',
+            'icon_color' => 'green',
+            'url'        => 'messages/create',
+        ],
+        [
+            'text'       => 'All Message',
+            'icon_color' => 'green',
+            'url'        => 'messages',
         ],
 
     ],

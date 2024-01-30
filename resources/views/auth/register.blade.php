@@ -13,17 +13,17 @@
 		<!-- Title -->
 <title>Dashtic - Bootstrap Webapp Responsive Dashboard Simple Admin Panel Premium HTML5 Template</title>
 <!--Favicon -->
-<link rel="icon" href="stuff/images/brand/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="fuck/images/brand/favicon.ico" type="image/x-icon"/>
 <!-- Bootstrap css -->
 <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <!-- Style css -->
-<link href="stuff/css/style.css" rel="stylesheet" />
+<link href="fuck/css/style.css" rel="stylesheet" />
 <!-- Dark css -->
-<link href="stuff/css/dark.css" rel="stylesheet" />
+<link href="fuck/css/dark.css" rel="stylesheet" />
 <!-- Skins css -->
-<link href="stuff/css/skins.css" rel="stylesheet" />
+<link href="fuck/css/skins.css" rel="stylesheet" />
 <!-- Animate css -->
-<link href="stuff/css/animated.css" rel="stylesheet" />
+<link href="fuck/css/animated.css" rel="stylesheet" />
 <!---Icons css-->
 <link href="assets/plugins/web-fonts/icons.css" rel="stylesheet" />
 <link href="assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@
 										</div>
 										<div class="card text-white bg-primary py-5 d-md-down-none page-content mt-0">
 											<div class="card-body text-center justify-content-center page-single-content">
-												<img src="stuff/images/pattern/login.png" alt="img">
+												<img src="fuck/images/pattern/login.png" alt="img">
 											</div>
 										</div>
 									</div>
